@@ -1,0 +1,65 @@
+generated: '2026-08-04'
+method: derived
+source: openapi/ethernovia-customer-portal-openapi.yml
+format: strapi-error-envelope
+rfc9457: false
+envelope:
+  media_type: application/json
+  schema: components.schemas.Error
+  shape: '{ "data": null, "error": { "status": <int>, "name": <string>, "message": <string>, "details": {} } }'
+  fields:
+  - {field: error.status, type: integer, note: mirrors the HTTP status code}
+  - {field: error.name, type: string, note: error class name, e.g. ForbiddenError, NotFoundError, ValidationError}
+  - {field: error.message, type: string, note: human-readable message}
+  - {field: error.details, type: object, note: per-error detail payload; empty object on the responses observed live}
+coverage:
+  operations_total: 87
+  operations_with_4xx: 60
+  operations_with_5xx: 60
+problems:
+- status: 400
+  name: BadRequestError
+  title: Bad Request
+  occurrences: 60
+  remediation: Check request body against the *Request schema for the entity and re-send.
+- status: 401
+  name: UnauthorizedError
+  title: Unauthorized
+  occurrences: 60
+  remediation: Supply a bearer JWT in the Authorization header. Obtain one via the Auth0
+    tenant (https://ethernovia.us.auth0.com/) or POST /auth/local.
+- status: 403
+  name: ForbiddenError
+  title: Forbidden
+  occurrences: 60
+  observed_live: true
+  observed_example: '{"data":null,"error":{"status":403,"name":"ForbiddenError","message":"Forbidden","details":{}}}'
+  remediation: The authenticated role lacks the users-permissions grant for this controller
+    action. This is also the response returned to every anonymous caller.
+- status: 404
+  name: NotFoundError
+  title: Not Found
+  occurrences: 60
+  observed_live: true
+  observed_example: '{"data":null,"error":{"status":404,"name":"NotFoundError","message":"Not Found","details":{}}}'
+  remediation: Verify the documentId in the path; the record may be unpublished or deleted.
+- status: 500
+  name: InternalServerError
+  title: Internal Server Error
+  occurrences: 60
+  remediation: Retry; if persistent, contact Ethernovia support at
+    https://support.ethernovia.com/support/home.
+- status: 301
+  title: Moved Permanently
+  occurrences: 2
+  source_operations:
+  - GET /auth/{provider}/callback
+  - GET /auth/email-confirmation
+  remediation: Follow the redirect; these are the OAuth callback and email-confirmation
+    hand-offs back to the portal.
+x-evidence:
+  fetched: '2026-08-04'
+  live_probes:
+  - {url: 'https://portal-admin.ethernovia.com/api/ec-products', http_status: 403}
+  - {url: 'https://portal-admin.ethernovia.com/api/users/me', http_status: 403}
+  - {url: 'https://portal-admin.ethernovia.com/api', http_status: 404}

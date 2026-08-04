@@ -1,0 +1,62 @@
+generated: '2026-08-04'
+method: searched
+source: openapi/ethernovia-customer-portal-openapi.yml
+docs: https://portal-admin.ethernovia.com/documentation
+summary:
+  types:
+  - http
+  - openIdConnect
+  http_schemes:
+  - bearer
+  bearer_formats:
+  - JWT
+  identity_provider: Auth0 (ethernovia.us.auth0.com)
+  anonymous_access: false
+  note: >-
+    Every data endpoint on the Customer Portal API is bearer-JWT protected and returns
+    HTTP 403 ForbiddenError anonymously (verified 2026-08-04). Interactive sign-in is
+    federated to the company's Auth0 tenant; the Strapi users-permissions plugin also
+    exposes local email/password auth endpoints (/auth/local, /auth/local/register).
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  applied: global (root-level security requirement)
+  sources:
+  - openapi/ethernovia-customer-portal-openapi.yml
+- name: auth0
+  type: openIdConnect
+  method: searched
+  openIdConnectUrl: https://ethernovia.us.auth0.com/.well-known/openid-configuration
+  issuer: https://ethernovia.us.auth0.com/
+  authorization_endpoint: https://ethernovia.us.auth0.com/authorize
+  token_endpoint: https://ethernovia.us.auth0.com/oauth/token
+  userinfo_endpoint: https://ethernovia.us.auth0.com/userinfo
+  jwks_uri: https://ethernovia.us.auth0.com/.well-known/jwks.json
+  entry_point: https://portal-admin.ethernovia.com/api/connect/auth0
+  scopes_supported: [openid, profile, offline_access, name, given_name, family_name,
+    nickname, email, email_verified, picture, created_at, identities, phone, address]
+  grant_types_supported: [authorization_code, client_credentials, refresh_token, implicit,
+    password, 'urn:ietf:params:oauth:grant-type:device_code', 'urn:ietf:params:oauth:grant-type:token-exchange',
+    'urn:ietf:params:oauth:grant-type:jwt-bearer']
+  code_challenge_methods_supported: [S256, plain]
+  token_endpoint_auth_methods_supported: [client_secret_basic, client_secret_post,
+    private_key_jwt, none]
+  sources:
+  - well-known/ethernovia-auth0-openid-configuration.json
+local_auth_operations:
+- POST /auth/local
+- POST /auth/local/register
+- POST /auth/forgot-password
+- POST /auth/reset-password
+- POST /auth/change-password
+- GET /auth/{provider}/callback
+- GET /connect/{provider}
+gated_developer_surface:
+  note: >-
+    Ethernovia's product-facing software — tools, software binaries, source-code drivers,
+    header files and plug-in APIs, plus their documentation — is not reachable anonymously.
+    Access is granted through the Customer Portal under an NDA, and use is governed by a
+    separate EULA that accompanies the software rather than by the public Terms of Use.
+  source: https://www.ethernovia.com/terms-of-use/

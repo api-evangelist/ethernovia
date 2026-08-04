@@ -1,0 +1,26 @@
+generated: '2026-08-04'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.ethernovia.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 10 22:22:28 2026 GMT
+  hsts: null
+- host: portal.ethernovia.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 26 15:12:44 2026 GMT
+  hsts: null
+- host: portal-admin.ethernovia.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 26 15:12:35 2026 GMT
+  hsts: null
+domains:
+- domain: ethernovia.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none

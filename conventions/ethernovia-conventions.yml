@@ -1,0 +1,76 @@
+generated: '2026-08-04'
+method: derived
+source: openapi/ethernovia-customer-portal-openapi.yml
+api: Ethernovia Customer Portal API
+platform: Strapi 5 (REST content API + users-permissions + upload plugins)
+authentication:
+  style: bearer JWT (Authorization header)
+  applied: global security requirement on every operation
+  anonymous_response: 403 ForbiddenError
+  detail: authentication/ethernovia-authentication.yml
+pagination:
+  style: page-and-size, with an offset alternative
+  params:
+  - 'pagination[page]'
+  - 'pagination[pageSize]'
+  - 'pagination[start]'
+  - 'pagination[limit]'
+  - 'pagination[withCount]'
+  response_fields:
+  - meta.pagination.page
+  - meta.pagination.pageSize
+  - meta.pagination.pageCount
+  - meta.pagination.total
+  applies_to: all 12 collection GET operations
+sorting:
+  param: sort
+  format: comma-separated field list, optional ':asc' / ':desc' suffix
+filtering:
+  param: filters
+  style: nested operator object (Strapi filter syntax), e.g. filters[name][$eq]=value
+sparse_fields:
+  param: fields
+  note: comma-separated list restricting returned attributes
+expansion:
+  param: populate
+  note: relation population; the equivalent of field expansion on this platform
+localization:
+  param: locale
+  entity_field: locale
+  relation: localizations
+envelope:
+  success: '{ data: <entity | entity[]>, meta: { pagination: {...} } }'
+  error: '{ data: null, error: { status, name, message, details } }'
+  error_schema: components.schemas.Error
+  rfc9457: false
+  content_type: application/json
+identifiers:
+  primary: documentId (string, Strapi 5 document identifier)
+  legacy: id (string or number)
+  path_param: '{id}'
+timestamps:
+  fields: [createdAt, updatedAt, publishedAt]
+  format: RFC 3339 date-time
+audit:
+  fields: [createdBy, updatedBy]
+  dedicated_entity: AuditUserTrail (/audit-user-trails)
+idempotency:
+  supported: false
+  note: >-
+    No Idempotency-Key header or equivalent parameter appears anywhere in the OpenAPI, and
+    no idempotency contract is documented. Writes are plain POST/PUT/DELETE. No Idempotency
+    pointer is emitted for this provider.
+rate_limiting:
+  documented: false
+  headers: none observed
+versioning:
+  scheme: none in the URI (all operations sit under /api)
+  spec_version: 1.0.0
+  detail: lifecycle/ethernovia-lifecycle.yml
+tracing:
+  request_id_header: none documented
+cross_links:
+  errors: errors/ethernovia-problem-types.yml
+  lifecycle: lifecycle/ethernovia-lifecycle.yml
+  authentication: authentication/ethernovia-authentication.yml
+  data_model: data-model/ethernovia-data-model.yml

@@ -1,0 +1,74 @@
+generated: '2026-08-04'
+method: probed
+source: live GET of /.well-known/* on every Ethernovia host
+summary:
+  hosts_probed: 5
+  documents_found: 3
+  note: >-
+    Ethernovia's own web and portal hosts publish no /.well-known documents — no security.txt,
+    no api-catalog, no openid-configuration, no ai-plugin.json, no agent card. The only
+    discovery documents that resolve belong to the company's Auth0 tenant
+    (ethernovia.us.auth0.com), which is the identity provider behind the Customer Portal
+    sign-in (portal-admin.ethernovia.com/api/connect/auth0 redirects there).
+hosts:
+- host: https://ethernovia.us.auth0.com
+  role: identity-provider (Auth0 tenant backing the Customer Portal)
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: ethernovia-auth0-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: ethernovia-auth0-oauth-authorization-server.json
+  - path: /.well-known/jwks.json
+    status: 200
+    file: null
+    note: signing keys only; not archived
+- host: https://www.ethernovia.com
+  role: corporate website (WordPress)
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://portal.ethernovia.com
+  role: Customer Portal (Next.js)
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://portal-admin.ethernovia.com
+  role: Customer Portal API (Strapi 5)
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://support.ethernovia.com
+  role: helpdesk (Freshdesk)
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+not_resolving:
+- api.ethernovia.com
+- docs.ethernovia.com
+- developer.ethernovia.com
+- trust.ethernovia.com
+- security.ethernovia.com
+- status.ethernovia.com
+x-evidence:
+  fetched: '2026-08-04'
+  method: curl GET, status code recorded per path

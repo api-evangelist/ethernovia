@@ -1,0 +1,96 @@
+generated: '2026-08-04'
+method: searched
+source: https://www.ethernovia.com/certificates-standards/
+company_certifications:
+  page: https://www.ethernovia.com/certificates-standards/
+  completed:
+  - id: iso-9001-2015
+    name: ISO 9001:2015 — Quality Management Systems
+    status: certified
+  - id: iso-14001-2015
+    name: ISO 14001:2015 — Environmental Management Systems
+    status: certified
+  - id: iso-26262-2018
+    name: ISO 26262:2018 — Road vehicles, Functional Safety
+    status: certified
+  in_progress:
+  - id: iso-sae-21434-2021
+    name: ISO/SAE 21434:2021 — Road vehicles, Cybersecurity engineering
+    status: upcoming
+  - id: aspice
+    name: Automotive SPICE (ASPICE)
+    status: upcoming
+    note: no maturity level published
+  not_published:
+  - SOC 2
+  - ISO 27001
+  - PCI DSS
+  - HIPAA
+  - FedRAMP
+  note: >-
+    No certifying body, ASIL level or ASPICE capability level is stated on the public page.
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    Customer Portal sign-in federates to an Auth0 tenant advertising an RFC 8414
+    authorization-server metadata document with authorization_code, client_credentials,
+    refresh_token, device_code, token-exchange and jwt-bearer grants.
+  source: well-known/ethernovia-auth0-oauth-authorization-server.json
+- id: oidc
+  conforms: true
+  evidence: >-
+    https://ethernovia.us.auth0.com/.well-known/openid-configuration returns 200 with
+    issuer, authorization/token/userinfo endpoints, jwks_uri and standard claims.
+  source: well-known/ethernovia-auth0-openid-configuration.json
+- id: pkce-rfc7636
+  conforms: true
+  evidence: code_challenge_methods_supported includes S256
+  source: well-known/ethernovia-auth0-openid-configuration.json
+- id: jwt-rfc7519
+  conforms: true
+  evidence: OpenAPI securityScheme bearerAuth declares bearerFormat JWT
+  source: openapi/ethernovia-customer-portal-openapi.yml
+- id: openapi-3.0
+  conforms: true
+  evidence: portal-admin.ethernovia.com/documentation serves an OpenAPI 3.0.0 document
+    with 45 paths and 87 operations
+  source: openapi/ethernovia-customer-portal-openapi.yml
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: errors use a Strapi '{data,error{status,name,message,details}}' envelope with
+    application/json, not application/problem+json
+  source: errors/ethernovia-problem-types.yml
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns 404 on every Ethernovia host
+  source: well-known/ethernovia-well-known.yml
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: no Sunset/Deprecation header or deprecation policy published
+- id: asyncapi
+  conforms: false
+  evidence: no event, streaming or webhook surface published
+- id: dnssec
+  conforms: false
+  evidence: ethernovia.com is not DNSSEC signed
+  source: security/ethernovia-domain-security.yml
+- id: dmarc
+  conforms: true
+  evidence: DMARC record present with policy p=none
+  source: security/ethernovia-domain-security.yml
+- id: hsts
+  conforms: false
+  evidence: no Strict-Transport-Security header on www, portal or portal-admin
+  source: security/ethernovia-domain-security.yml
+domain_standards_claimed:
+  note: >-
+    Ethernovia's product marketing describes single-pair (T1) automotive Ethernet PHYs at
+    10G/5G/2.5G/1G, deterministic packet processing and GMSL 2/3 plus CAN FD/XL interfaces,
+    but the public product pages name no IEEE 802.3 clause, IEEE 802.1 TSN profile, OPEN
+    Alliance specification, AEC-Q100 grade or ASIL level. Those claims are not recorded here
+    because they are not published.
+  sources:
+  - https://www.ethernovia.com/products/single-pair-t1-ethernet-phys/
+  - https://www.ethernovia.com/products/deterministic-packet-processors/
+  - https://www.ethernovia.com/products/physical-ai-platforms/ethernet-sensor-bridge-for-nvidia-holoscan/

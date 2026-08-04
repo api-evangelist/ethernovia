@@ -1,0 +1,30 @@
+generated: '2026-08-04'
+method: generated
+source: openapi/ethernovia-customer-portal-openapi.yml
+note: >-
+  No provider-published skills or AGENTS.md exist on any Ethernovia host (checked
+  www.ethernovia.com, portal.ethernovia.com, portal-admin.ethernovia.com — all 404).
+  These are API Evangelist-generated operating instructions grounded in operationIds
+  verified verbatim against the harvested OpenAPI.
+skills:
+- file: ethernovia-browse-product-documentation.md
+  name: Browse Ethernovia product documentation
+  api: openapi/ethernovia-customer-portal-openapi.yml
+  operations:
+  - get/ec-product-families
+  - get/ec-product-categories
+  - get/ec-products
+  - get/ec-products/{id}
+  - get/ec-documents
+  - get/ec-documents/{id}
+  - get/ec-document-types
+- file: ethernovia-retrieve-software-package.md
+  name: Retrieve an Ethernovia software package and record the download
+  api: openapi/ethernovia-customer-portal-openapi.yml
+  operations:
+  - get/ec-products
+  - get/ec-software-packages
+  - get/ec-software-packages/{id}
+  - get/ec-document-types
+  - get/my-downloads
+  - post/my-downloads

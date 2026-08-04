@@ -1,0 +1,127 @@
+generated: '2026-08-04'
+method: derived
+source: openapi/ethernovia-customer-portal-openapi.yml
+api: Ethernovia Customer Portal API
+identifier_convention:
+  primary: documentId (string)
+  legacy: id (string | number)
+  note: Strapi 5 document identifiers; no typed id prefixes are used.
+common_fields:
+  audit: [createdAt, updatedAt, publishedAt, createdBy, updatedBy]
+  i18n: [locale, localizations]
+  workflow: [strapi_stage, strapi_assignee]
+entities:
+- name: EcProductFamily
+  collection: /ec-product-families
+  description: Top-level product family in the customer-facing catalog.
+  fields: [name, slug, sort_order]
+  relationships:
+  - {type: has_many, target: Users-Permissions-User, via: users}
+  - {type: has_many, target: EcGroup, via: ec_groups}
+  - {type: has_one, target: EcStatus, via: ec_status}
+- name: EcProductCategory
+  collection: /ec-product-categories
+  description: Category grouping products inside a family.
+  fields: [name, sort_order]
+  relationships:
+  - {type: has_one, target: EcProductFamily, via: ec_product_family}
+  - {type: has_many, target: Users-Permissions-User, via: users}
+  - {type: has_many, target: EcGroup, via: ec_groups}
+  - {type: has_one, target: EcStatus, via: ec_status}
+- name: EcProduct
+  collection: /ec-products
+  description: A catalog product entry that documents and software packages attach to.
+  fields: [name, slug, sort_order]
+  relationships:
+  - {type: has_many, target: EcProductCategory, via: ec_product_categories}
+  - {type: has_many, target: Users-Permissions-User, via: users}
+  - {type: has_many, target: EcGroup, via: ec_groups}
+  - {type: has_one, target: EcStatus, via: ec_status}
+- name: EcDocument
+  collection: /ec-documents
+  description: A downloadable customer document (datasheet, app note, release note) with
+    a revision and a release date.
+  fields: [name, date, revision, sort_order]
+  relationships:
+  - {type: has_one, target: UploadFile, via: file}
+  - {type: has_one, target: EcDocumentType, via: ec_document_type}
+  - {type: has_many, target: EcProduct, via: ec_products}
+  - {type: has_many, target: Users-Permissions-User, via: users}
+  - {type: has_many, target: EcGroup, via: ec_groups}
+  - {type: has_one, target: EcStatus, via: ec_status}
+- name: EcDocumentType
+  collection: /ec-document-types
+  description: Classification applied to documents and software packages.
+  fields: [name, sort_order]
+  relationships: []
+- name: EcSoftwarePackage
+  collection: /ec-software-packages
+  description: A downloadable software release — the delivery vehicle for Ethernovia's
+    binaries, drivers and header-file APIs. Same shape as EcDocument.
+  fields: [name, date, revision, sort_order]
+  relationships:
+  - {type: has_one, target: UploadFile, via: file}
+  - {type: has_one, target: EcDocumentType, via: ec_document_type}
+  - {type: has_many, target: EcProduct, via: ec_products}
+  - {type: has_many, target: Users-Permissions-User, via: users}
+  - {type: has_many, target: EcGroup, via: ec_groups}
+  - {type: has_one, target: EcStatus, via: ec_status}
+- name: MyDownload
+  collection: /my-downloads
+  description: A per-user download record linking a user to the document or software
+    package they retrieved.
+  fields: [description, type, revision]
+  relationships:
+  - {type: has_one, target: Users-Permissions-User, via: users}
+  - {type: has_one, target: EcDocument, via: ec_document}
+  - {type: has_one, target: EcSoftwarePackage, via: ec_software_package}
+- name: EcGroup
+  collection: /ec-groups
+  description: Customer group used to gate catalog visibility and download entitlement.
+  fields: [name]
+  relationships:
+  - {type: has_many, target: Users-Permissions-User, via: users}
+- name: EcStatus
+  collection: /ec-statuses
+  description: Publication/visibility status applied across catalog entities.
+  fields: [name, sort_order]
+  relationships: []
+- name: EcExcludedDomain
+  collection: /ec-excluded-domains
+  description: Email domain blocklist applied at portal registration.
+  fields: [domain]
+  relationships: []
+- name: EcSendAlertEmail
+  collection: /ec-send-alert-emails
+  description: Outbound alert-email job recording whether a document notification was sent.
+  fields: [isEmailSent, completedAt]
+  relationships:
+  - {type: has_one, target: EcDocument, via: ec_document}
+- name: AuditUserTrail
+  collection: /audit-user-trails
+  description: Audit record of a user action in the portal.
+  fields: [action, description]
+  relationships:
+  - {type: has_one, target: Users-Permissions-User, via: user}
+- name: UploadFile
+  collection: /upload/files
+  description: Strapi upload-plugin file record backing every document and software package.
+  fields: [name, hash, ext, mime, size, url, previewUrl, provider, width, height, formats]
+  relationships: []
+- name: Users-Permissions-User
+  collection: /users
+  description: Portal user account.
+  fields: [username, email, provider, confirmed, blocked]
+  relationships:
+  - {type: has_one, target: Users-Permissions-Role, via: role}
+- name: Users-Permissions-Role
+  collection: /users-permissions/roles
+  description: Role carrying the permissions tree that gates every controller action.
+  fields: [name, description, type]
+  relationships:
+  - {type: has_many, target: Users-Permissions-User, via: users}
+graph_summary:
+  entities: 15
+  core_chain: EcProductFamily -> EcProductCategory -> EcProduct -> (EcDocument | EcSoftwarePackage) -> UploadFile
+  entitlement_chain: Users-Permissions-User -> EcGroup -> (EcProduct | EcDocument | EcSoftwarePackage)
+  download_ledger: MyDownload joins Users-Permissions-User to EcDocument / EcSoftwarePackage

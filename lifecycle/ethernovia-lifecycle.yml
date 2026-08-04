@@ -1,0 +1,39 @@
+generated: '2026-08-04'
+method: derived
+source: openapi/ethernovia-customer-portal-openapi.yml
+api: Ethernovia Customer Portal API
+versioning:
+  scheme: none
+  current: '1.0.0'
+  note: >-
+    The spec declares info.version 1.0.0 but every path sits under a flat /api root with no
+    version segment, no version header and no published versioning policy.
+  docs: null
+deprecation:
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+deprecated_operations: []
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+status_page_probe:
+  url: https://status.ethernovia.com/
+  result: DNS does not resolve
+changelog:
+  url: null
+  note: >-
+    Ethernovia publishes a dated news and blog stream (https://www.ethernovia.com/news/,
+    RSS at /news/feed/) but no API or product changelog. Software releases carry a
+    revision and date inside the gated Customer Portal (EcSoftwarePackage.revision,
+    EcSoftwarePackage.date) rather than on a public page.
+support:
+  helpdesk: https://support.ethernovia.com/support/home
+  portal: https://portal.ethernovia.com/
+  email: info@ethernovia.com
+x-evidence:
+  fetched: '2026-08-04'
+  probes:
+  - {url: 'https://status.ethernovia.com/', result: NXDOMAIN}
+  - {url: 'https://www.ethernovia.com/news/feed/', http_status: 200, content_type: application/rss+xml}
