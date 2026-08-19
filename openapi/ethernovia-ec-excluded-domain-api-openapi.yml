@@ -1,0 +1,1060 @@
+openapi: 3.2.0
+info:
+  version: 1.0.0
+  title: DOCUMENTATION Ec Excluded Domain API
+  description: ''
+  termsOfService: YOUR_TERMS_OF_SERVICE_URL
+  contact:
+    name: TEAM
+    email: contact-email@something.io
+    url: mywebsite.io
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  x-generation-date: '2026-07-07T06:23:13.532Z'
+servers:
+- url: http://localhost:1337/api
+  description: Development server
+security:
+- bearerAuth: []
+tags:
+- name: Ec-excluded-domain
+paths:
+  /ec-excluded-domains:
+    get:
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EcExcludedDomainListResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      tags:
+      - Ec-excluded-domain
+      parameters:
+      - name: sort
+        in: query
+        description: Sort by attributes ascending (asc) or descending (desc)
+        deprecated: false
+        required: false
+        schema:
+          type: string
+      - name: pagination[withCount]
+        in: query
+        description: 'Return page/pageSize (default: true)'
+        deprecated: false
+        required: false
+        schema:
+          type: boolean
+      - name: pagination[page]
+        in: query
+        description: 'Page number (default: 0)'
+        deprecated: false
+        required: false
+        schema:
+          type: integer
+      - name: pagination[pageSize]
+        in: query
+        description: 'Page size (default: 25)'
+        deprecated: false
+        required: false
+        schema:
+          type: integer
+      - name: pagination[start]
+        in: query
+        description: 'Offset value (default: 0)'
+        deprecated: false
+        required: false
+        schema:
+          type: integer
+      - name: pagination[limit]
+        in: query
+        description: 'Number of entities to return (default: 25)'
+        deprecated: false
+        required: false
+        schema:
+          type: integer
+      - name: fields
+        in: query
+        description: 'Fields to return (ex: title,author)'
+        deprecated: false
+        required: false
+        schema:
+          type: string
+      - name: populate
+        in: query
+        description: Relations to return
+        deprecated: false
+        required: false
+        schema:
+          type: string
+      - name: filters
+        in: query
+        description: Filters to apply
+        deprecated: false
+        required: false
+        schema:
+          type: object
+          additionalProperties: true
+        style: deepObject
+      - name: locale
+        in: query
+        description: Locale to apply
+        deprecated: false
+        required: false
+        schema:
+          type: string
+      operationId: get/ec-excluded-domains
+    post:
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EcExcludedDomainResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      tags:
+      - Ec-excluded-domain
+      parameters: []
+      operationId: post/ec-excluded-domains
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EcExcludedDomainRequest'
+  /ec-excluded-domains/{id}:
+    get:
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EcExcludedDomainResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      tags:
+      - Ec-excluded-domain
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        deprecated: false
+        required: true
+        schema:
+          type: string
+      operationId: get/ec-excluded-domains/{id}
+    put:
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EcExcludedDomainResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      tags:
+      - Ec-excluded-domain
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        deprecated: false
+        required: true
+        schema:
+          type: string
+      operationId: put/ec-excluded-domains/{id}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EcExcludedDomainRequest'
+    delete:
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: integer
+                format: int64
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      tags:
+      - Ec-excluded-domain
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        deprecated: false
+        required: true
+        schema:
+          type: string
+      operationId: delete/ec-excluded-domains/{id}
+components:
+  schemas:
+    EcExcludedDomainListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EcExcludedDomain'
+        meta:
+          type: object
+          properties:
+            pagination:
+              type: object
+              properties:
+                page:
+                  type: integer
+                pageSize:
+                  type: integer
+                  minimum: 25
+                pageCount:
+                  type: integer
+                  maximum: 1
+                total:
+                  type: integer
+    EcExcludedDomainResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/EcExcludedDomain'
+        meta:
+          type: object
+    EcExcludedDomain:
+      type: object
+      required:
+      - domain
+      properties:
+        id:
+          oneOf:
+          - type: string
+          - type: number
+        documentId:
+          type: string
+        domain:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        publishedAt:
+          type: string
+          format: date-time
+        createdBy:
+          type: object
+          properties:
+            id:
+              oneOf:
+              - type: string
+              - type: number
+            documentId:
+              type: string
+            firstname:
+              type: string
+            lastname:
+              type: string
+            username:
+              type: string
+            email:
+              type: string
+              format: email
+            resetPasswordToken:
+              type: string
+            registrationToken:
+              type: string
+            isActive:
+              type: boolean
+            roles:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    oneOf:
+                    - type: string
+                    - type: number
+                  documentId:
+                    type: string
+                  name:
+                    type: string
+                  code:
+                    type: string
+                  description:
+                    type: string
+                  users:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          oneOf:
+                          - type: string
+                          - type: number
+                        documentId:
+                          type: string
+                  permissions:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          oneOf:
+                          - type: string
+                          - type: number
+                        documentId:
+                          type: string
+                        action:
+                          type: string
+                        actionParameters: {}
+                        subject:
+                          type: string
+                        properties: {}
+                        conditions: {}
+                        role:
+                          type: object
+                          properties:
+                            id:
+                              oneOf:
+                              - type: string
+                              - type: number
+                            documentId:
+                              type: string
+                        apiToken:
+                          type: object
+                          properties:
+                            id:
+                              oneOf:
+                              - type: string
+                              - type: number
+                            documentId:
+                              type: string
+                            name:
+                              type: string
+                            description:
+                              type: string
+                            kind:
+                              type: string
+                              enum:
+                              - content-api
+                              - admin
+                            type:
+                              type: string
+                              enum:
+                              - read-only
+                              - full-access
+                              - custom
+                            accessKey:
+                              type: string
+                            encryptedKey:
+                              type: string
+                            lastUsedAt:
+                              type: string
+                              format: date-time
+                            permissions:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    oneOf:
+                                    - type: string
+                                    - type: number
+                                  documentId:
+                                    type: string
+                                  action:
+                                    type: string
+                                  token:
+                                    type: object
+                                    properties:
+                                      id:
+                                        oneOf:
+                                        - type: string
+                                        - type: number
+                                      documentId:
+                                        type: string
+                                  createdAt:
+                                    type: string
+                                    format: date-time
+                                  updatedAt:
+                                    type: string
+                                    format: date-time
+                                  publishedAt:
+                                    type: string
+                                    format: date-time
+                                  createdBy:
+                                    type: object
+                                    properties:
+                                      id:
+                                        oneOf:
+                                        - type: string
+                                        - type: number
+                                      documentId:
+                                        type: string
+                                  updatedBy:
+                                    type: object
+                                    properties:
+                                      id:
+                                        oneOf:
+                                        - type: string
+                                        - type: number
+                                      documentId:
+                                        type: string
+                                  locale:
+                                    type: string
+                                  localizations:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        id:
+                                          oneOf:
+                                          - type: string
+                                          - type: number
+                                        documentId:
+                                          type: string
+                            adminPermissions:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    oneOf:
+                                    - type: string
+                                    - type: number
+                                  documentId:
+                                    type: string
+                            adminUserOwner:
+                              type: object
+                              properties:
+                                id:
+                                  oneOf:
+                                  - type: string
+                                  - type: number
+                                documentId:
+                                  type: string
+                            expiresAt:
+                              type: string
+                              format: date-time
+                            lifespan:
+                              type: string
+                              pattern: ^\d*$
+                              example: '123456789'
+                            createdAt:
+                              type: string
+                              format: date-time
+                            updatedAt:
+                              type: string
+                              format: date-time
+                            publishedAt:
+                              type: string
+                              format: date-time
+                            createdBy:
+                              type: object
+                              properties:
+                                id:
+                                  oneOf:
+                                  - type: string
+                                  - type: number
+                                documentId:
+                                  type: string
+                            updatedBy:
+                              type: object
+                              properties:
+                                id:
+                                  oneOf:
+                                  - type: string
+                                  - type: number
+                                documentId:
+                                  type: string
+                            locale:
+                              type: string
+                            localizations:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    oneOf:
+                                    - type: string
+                                    - type: number
+                                  documentId:
+                                    type: string
+                        createdAt:
+                          type: string
+                          format: date-time
+                        updatedAt:
+                          type: string
+                          format: date-time
+                        publishedAt:
+                          type: string
+                          format: date-time
+                        createdBy:
+                          type: object
+                          properties:
+                            id:
+                              oneOf:
+                              - type: string
+                              - type: number
+                            documentId:
+                              type: string
+                        updatedBy:
+                          type: object
+                          properties:
+                            id:
+                              oneOf:
+                              - type: string
+                              - type: number
+                            documentId:
+                              type: string
+                        locale:
+                          type: string
+                        localizations:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                oneOf:
+                                - type: string
+                                - type: number
+                              documentId:
+                                type: string
+                  createdAt:
+                    type: string
+                    format: date-time
+                  updatedAt:
+                    type: string
+                    format: date-time
+                  publishedAt:
+                    type: string
+                    format: date-time
+                  createdBy:
+                    type: object
+                    properties:
+                      id:
+                        oneOf:
+                        - type: string
+                        - type: number
+                      documentId:
+                        type: string
+                  updatedBy:
+                    type: object
+                    properties:
+                      id:
+                        oneOf:
+                        - type: string
+                        - type: number
+                      documentId:
+                        type: string
+                  locale:
+                    type: string
+                  localizations:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          oneOf:
+                          - type: string
+                          - type: number
+                        documentId:
+                          type: string
+            apiTokens:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    oneOf:
+                    - type: string
+                    - type: number
+                  documentId:
+                    type: string
+            blocked:
+              type: boolean
+            preferedLanguage:
+              type: string
+            createdAt:
+              type: string
+              format: date-time
+            updatedAt:
+              type: string
+              format: date-time
+            publishedAt:
+              type: string
+              format: date-time
+            createdBy:
+              type: object
+              properties:
+                id:
+                  oneOf:
+                  - type: string
+                  - type: number
+                documentId:
+                  type: string
+            updatedBy:
+              type: object
+              properties:
+                id:
+                  oneOf:
+                  - type: string
+                  - type: number
+                documentId:
+                  type: string
+            locale:
+              type: string
+            localizations:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    oneOf:
+                    - type: string
+                    - type: number
+                  documentId:
+                    type: string
+        updatedBy:
+          type: object
+          properties:
+            id:
+              oneOf:
+              - type: string
+              - type: number
+            documentId:
+              type: string
+        locale:
+          type: string
+        localizations:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                oneOf:
+                - type: string
+                - type: number
+              documentId:
+                type: string
+              domain:
+                type: string
+              createdAt:
+                type: string
+                format: date-time
+              updatedAt:
+                type: string
+                format: date-time
+              publishedAt:
+                type: string
+                format: date-time
+              createdBy:
+                type: object
+                properties:
+                  id:
+                    oneOf:
+                    - type: string
+                    - type: number
+                  documentId:
+                    type: string
+              updatedBy:
+                type: object
+                properties:
+                  id:
+                    oneOf:
+                    - type: string
+                    - type: number
+                  documentId:
+                    type: string
+              locale:
+                type: string
+              localizations:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      oneOf:
+                      - type: string
+                      - type: number
+                    documentId:
+                      type: string
+              strapi_stage:
+                type: object
+                properties:
+                  id:
+                    oneOf:
+                    - type: string
+                    - type: number
+                  documentId:
+                    type: string
+                  name:
+                    type: string
+                  color:
+                    type: string
+                  workflow:
+                    type: object
+                    properties:
+                      id:
+                        oneOf:
+                        - type: string
+                        - type: number
+                      documentId:
+                        type: string
+                      name:
+                        type: string
+                      stages:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              oneOf:
+                              - type: string
+                              - type: number
+                            documentId:
+                              type: string
+                      stageRequiredToPublish:
+                        type: object
+                        properties:
+                          id:
+                            oneOf:
+                            - type: string
+                            - type: number
+                          documentId:
+                            type: string
+                      contentTypes: {}
+                      createdAt:
+                        type: string
+                        format: date-time
+                      updatedAt:
+                        type: string
+                        format: date-time
+                      publishedAt:
+                        type: string
+                        format: date-time
+                      createdBy:
+                        type: object
+                        properties:
+                          id:
+                            oneOf:
+                            - type: string
+                            - type: number
+                          documentId:
+                            type: string
+                      updatedBy:
+                        type: object
+                        properties:
+                          id:
+                            oneOf:
+                            - type: string
+                            - type: number
+                          documentId:
+                            type: string
+                      locale:
+                        type: string
+                      localizations:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              oneOf:
+                              - type: string
+                              - type: number
+                            documentId:
+                              type: string
+                  permissions:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          oneOf:
+                          - type: string
+                          - type: number
+                        documentId:
+                          type: string
+                  createdAt:
+                    type: string
+                    format: date-time
+                  updatedAt:
+                    type: string
+                    format: date-time
+                  publishedAt:
+                    type: string
+                    format: date-time
+                  createdBy:
+                    type: object
+                    properties:
+                      id:
+                        oneOf:
+                        - type: string
+                        - type: number
+                      documentId:
+                        type: string
+                  updatedBy:
+                    type: object
+                    properties:
+                      id:
+                        oneOf:
+                        - type: string
+                        - type: number
+                      documentId:
+                        type: string
+                  locale:
+                    type: string
+                  localizations:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          oneOf:
+                          - type: string
+                          - type: number
+                        documentId:
+                          type: string
+              strapi_assignee:
+                type: object
+                properties:
+                  id:
+                    oneOf:
+                    - type: string
+                    - type: number
+                  documentId:
+                    type: string
+        strapi_stage:
+          type: object
+          properties:
+            id:
+              oneOf:
+              - type: string
+              - type: number
+            documentId:
+              type: string
+        strapi_assignee:
+          type: object
+          properties:
+            id:
+              oneOf:
+              - type: string
+              - type: number
+            documentId:
+              type: string
+    EcExcludedDomainRequest:
+      type: object
+      required:
+      - data
+      properties:
+        data:
+          required:
+          - domain
+          type: object
+          properties:
+            domain:
+              type: string
+            locale:
+              type: string
+            localizations:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            strapi_stage:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            strapi_assignee:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+externalDocs:
+  description: Find out more
+  url: https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html
+x-strapi-config:
+  plugins:
+  - upload
+  - users-permissions

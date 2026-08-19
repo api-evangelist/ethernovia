@@ -1,0 +1,171 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "DOCUMENTATION Users-Permissions - Auth API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users-Permissions - Auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Login with a provider",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:1337/api/connect/:provider",
+            "params": [
+              {
+                "name": "provider",
+                "value": "",
+                "type": "path",
+                "description": "Provider name"
+              }
+            ]
+          },
+          "docs": "Redirects to provider login before being redirect to /auth/{provider}/callback"
+        },
+        {
+          "info": {
+            "name": "Local login",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:1337/api/auth/local",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns a jwt token and user info"
+        },
+        {
+          "info": {
+            "name": "Register a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:1337/api/auth/local/register",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns a jwt token and user info"
+        },
+        {
+          "info": {
+            "name": "Default Callback from provider auth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:1337/api/auth/:provider/callback",
+            "params": [
+              {
+                "name": "provider",
+                "value": "",
+                "type": "path",
+                "description": "Provider name"
+              }
+            ]
+          },
+          "docs": "Default Callback from provider auth"
+        },
+        {
+          "info": {
+            "name": "Send rest password email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:1337/api/auth/forgot-password",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send rest password email"
+        },
+        {
+          "info": {
+            "name": "Rest user password",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:1337/api/auth/reset-password",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Rest user password"
+        },
+        {
+          "info": {
+            "name": "Update user's own password",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:1337/api/auth/change-password",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update user's own password"
+        },
+        {
+          "info": {
+            "name": "Confirm user email",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:1337/api/auth/email-confirmation",
+            "params": [
+              {
+                "name": "confirmation",
+                "value": "",
+                "type": "query",
+                "description": "confirmation token received by email"
+              }
+            ]
+          },
+          "docs": "Confirm user email"
+        },
+        {
+          "info": {
+            "name": "Send confirmation email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:1337/api/auth/send-email-confirmation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send confirmation email"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

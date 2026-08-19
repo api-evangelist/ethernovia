@@ -1,0 +1,165 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "DOCUMENTATION Ec Group API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Ec-group",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get/ec-groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:1337/api/ec-groups",
+            "params": [
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort by attributes ascending (asc) or descending (desc)"
+              },
+              {
+                "name": "pagination[withCount]",
+                "value": "",
+                "type": "query",
+                "description": "Return page/pageSize (default: true)"
+              },
+              {
+                "name": "pagination[page]",
+                "value": "",
+                "type": "query",
+                "description": "Page number (default: 0)"
+              },
+              {
+                "name": "pagination[pageSize]",
+                "value": "",
+                "type": "query",
+                "description": "Page size (default: 25)"
+              },
+              {
+                "name": "pagination[start]",
+                "value": "",
+                "type": "query",
+                "description": "Offset value (default: 0)"
+              },
+              {
+                "name": "pagination[limit]",
+                "value": "",
+                "type": "query",
+                "description": "Number of entities to return (default: 25)"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Fields to return (ex: title,author)"
+              },
+              {
+                "name": "populate",
+                "value": "",
+                "type": "query",
+                "description": "Relations to return"
+              },
+              {
+                "name": "filters",
+                "value": "",
+                "type": "query",
+                "description": "Filters to apply"
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Locale to apply"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post/ec-groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:1337/api/ec-groups",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "get/ec-groups/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:1337/api/ec-groups/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put/ec-groups/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:1337/api/ec-groups/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "delete/ec-groups/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:1337/api/ec-groups/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

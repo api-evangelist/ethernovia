@@ -1,0 +1,2157 @@
+{
+  "item": [
+    {
+      "id": "f023265b-e383-4071-9a21-dde0bdacc1c1",
+      "name": "Audit-user-trail",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0e0b4d81-76f3-416a-a8a1-0e121d98e554",
+          "name": "get/audit-user-trails",
+          "request": {
+            "name": "get/audit-user-trails",
+            "description": {},
+            "url": {
+              "path": [
+                "audit-user-trails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "Sort by attributes ascending (asc) or descending (desc)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination[withCount]",
+                  "value": "<boolean>",
+                  "description": "Return page/pageSize (default: true)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination[page]",
+                  "value": "<integer>",
+                  "description": "Page number (default: 0)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination[pageSize]",
+                  "value": "<integer>",
+                  "description": "Page size (default: 25)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination[start]",
+                  "value": "<integer>",
+                  "description": "Offset value (default: 0)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination[limit]",
+                  "value": "<integer>",
+                  "description": "Number of entities to return (default: 25)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to return (ex: title,author)"
+                },
+                {
+                  "disabled": false,
+                  "key": "populate",
+                  "value": "<string>",
+                  "description": "Relations to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters[key_0]",
+                  "value": "",
+                  "description": "Filters to apply"
+                },
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>",
+                  "description": "Locale to apply"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cce7041e-4537-461d-b19c-7e370f23ebfa",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pagination[withCount]",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "pagination[page]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination[pageSize]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination[start]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination[limit]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "populate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters[key_0]",
+                      "value": "5438.157440163204"
+                    },
+                    {
+                      "key": "filters[key_1]",
+                      "value": "true"
+                    },
+                    {
+                      "key": "filters[key_2]",
+                      "value": "true"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"documentId\": \"string\",\n      \"user\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\",\n        \"username\": \"string\",\n        \"email\": \"56ZTdFem-tz0@wcVhgSFxzGyqNvGqJpnGGMsLI.kebo\",\n        \"provider\": \"string\",\n        \"resetPasswordToken\": \"string\",\n        \"confirmationToken\": \"string\",\n        \"confirmed\": false,\n        \"blocked\": true,\n        \"role\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"type\": \"string\",\n          \"permissions\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\",\n              \"action\": \"string\",\n              \"role\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"createdAt\": \"1979-04-06T08:10:54.012Z\",\n              \"updatedAt\": \"1959-08-09T04:03:08.857Z\",\n              \"publishedAt\": \"1957-08-18T04:25:26.237Z\",\n              \"createdBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\",\n                \"firstname\": \"string\",\n                \"lastname\": \"string\",\n                \"username\": \"string\",\n                \"email\": \"1-yYA@AqJLOjBwewjMKSJMfHuPyCSa.nrt\",\n                \"resetPasswordToken\": \"string\",\n                \"registrationToken\": \"string\",\n                \"isActive\": false,\n                \"roles\": [\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                ],\n                \"apiTokens\": [\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                ],\n                \"blocked\": true,\n                \"preferedLanguage\": \"string\",\n                \"createdAt\": \"2001-11-28T09:28:38.869Z\",\n                \"updatedAt\": \"2010-03-27T06:38:21.876Z\",\n                \"publishedAt\": \"1964-04-26T12:21:25.943Z\",\n                \"createdBy\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"updatedBy\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"locale\": \"string\",\n                \"localizations\": [\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                ]\n              },\n              \"updatedBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"locale\": \"string\",\n              \"localizations\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\",\n              \"action\": \"string\",\n              \"role\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"createdAt\": \"1998-04-15T12:46:07.622Z\",\n              \"updatedAt\": \"1966-06-06T16:05:23.494Z\",\n              \"publishedAt\": \"1956-05-21T14:17:09.658Z\",\n              \"createdBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\",\n                \"firstname\": \"string\",\n                \"lastname\": \"string\",\n                \"username\": \"string\",\n                \"email\": \"GAz9e66EKb3C@dhOkKvUUwOlUuJCeDfVw.lt\",\n                \"resetPasswordToken\": \"string\",\n                \"registrationToken\": \"string\",\n                \"isActive\": true,\n                \"roles\": [\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                ],\n                \"apiTokens\": [\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                ],\n                \"blocked\": true,\n                \"preferedLanguage\": \"string\",\n                \"createdAt\": \"1981-05-18T02:02:25.342Z\",\n                \"updatedAt\": \"1980-10-18T06:54:48.512Z\",\n                \"publishedAt\": \"1998-01-19T10:25:00.821Z\",\n                \"createdBy\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"updatedBy\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"locale\": \"string\",\n                \"localizations\": [\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                ]\n              },\n              \"updatedBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"locale\": \"string\",\n              \"localizations\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            }\n          ],\n          \"users\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            }\n          ],\n          \"createdAt\": \"1994-09-04T18:07:37.983Z\",\n          \"updatedAt\": \"2006-02-11T23:28:25.154Z\",\n          \"publishedAt\": \"2003-03-26T11:42:39.094Z\",\n          \"createdBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"updatedBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"locale\": \"string\",\n          \"localizations\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            }\n          ]\n        },\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"company\": \"string\",\n        \"title\": \"string\",\n        \"phone\": \"string\",\n        \"approved\": true,\n        \"isUserNotified\": false,\n        \"isAdminNotified\": false,\n        \"isApprovalEmailSent\": false,\n        \"country\": \"string\",\n        \"auth0SecretToken\": \"string\",\n        \"userAuth0Status\": true,\n        \"actionRequired\": \"string\",\n        \"createdAt\": \"1962-10-17T17:40:09.196Z\",\n        \"updatedAt\": \"2011-04-21T11:14:35.387Z\",\n        \"publishedAt\": \"1983-11-30T02:49:13.582Z\",\n        \"createdBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"updatedBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"locale\": \"string\",\n        \"localizations\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ],\n        \"strapi_stage\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\",\n          \"name\": \"string\",\n          \"color\": \"string\",\n          \"workflow\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\",\n            \"name\": \"string\",\n            \"stages\": [\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              }\n            ],\n            \"stageRequiredToPublish\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            \"contentTypes\": \"\",\n            \"createdAt\": \"1958-05-07T09:30:55.581Z\",\n            \"updatedAt\": \"1970-07-09T02:33:09.042Z\",\n            \"publishedAt\": \"2011-07-22T23:54:58.116Z\",\n            \"createdBy\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            \"updatedBy\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            \"locale\": \"string\",\n            \"localizations\": [\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              }\n            ]\n          },\n          \"permissions\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            }\n          ],\n          \"createdAt\": \"2010-10-28T18:42:20.816Z\",\n          \"updatedAt\": \"1967-05-06T03:08:43.398Z\",\n          \"publishedAt\": \"1966-07-15T06:00:02.356Z\",\n          \"createdBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"updatedBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"locale\": \"string\",\n          \"localizations\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            }\n          ]\n        },\n        \"strapi_assignee\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        }\n      },\n      \"action\": \"string\",\n      \"description\": \"string\",\n      \"createdAt\": \"2019-08-23T10:28:53.288Z\",\n      \"updatedAt\": \"1951-03-13T01:33:14.792Z\",\n      \"publishedAt\": \"1950-03-07T06:33:31.664Z\",\n      \"createdBy\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\"\n      },\n      \"updatedBy\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\"\n      },\n      \"locale\": \"string\",\n      \"localizations\": [\n        {\n          \"id\": \"string\",\n          \"documentId\": \"string\",\n          \"user\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"action\": \"string\",\n          \"description\": \"string\",\n          \"createdAt\": \"2005-02-18T10:59:25.571Z\",\n          \"updatedAt\": \"1994-02-10T11:53:48.534Z\",\n          \"publishedAt\": \"1988-06-19T00:36:29.761Z\",\n          \"createdBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"updatedBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"locale\": \"string\",\n          \"localizations\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            }\n          ],\n          \"strapi_stage\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"strapi_assignee\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        },\n        {\n          \"id\": \"string\",\n          \"documentId\": \"string\",\n          \"user\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"action\": \"string\",\n          \"description\": \"string\",\n          \"createdAt\": \"2020-05-09T04:56:55.737Z\",\n          \"updatedAt\": \"1997-10-01T13:44:57.981Z\",\n          \"publishedAt\": \"2015-08-19T05:23:45.221Z\",\n          \"createdBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"updatedBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"locale\": \"string\",\n          \"localizations\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            }\n          ],\n          \"strapi_stage\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"strapi_assignee\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        }\n      ],\n      \"strapi_stage\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\"\n      },\n      \"strapi_assignee\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\"\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"documentId\": \"string\",\n      \"user\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\",\n        \"username\": \"string\",\n        \"email\": \"8KoOH2L@DZCwCPYTrkfHIevMOSDSLy.jol\",\n        \"provider\": \"string\",\n        \"resetPasswordToken\": \"string\",\n        \"confirmationToken\": \"string\",\n        \"confirmed\": true,\n        \"blocked\": true,\n        \"role\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"type\": \"string\",\n          \"permissions\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\",\n              \"action\": \"string\",\n              \"role\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"createdAt\": \"1980-01-07T00:12:05.796Z\",\n              \"updatedAt\": \"1964-05-16T23:14:08.690Z\",\n              \"publishedAt\": \"2012-08-13T23:37:19.538Z\",\n              \"createdBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\",\n                \"firstname\": \"string\",\n                \"lastname\": \"string\",\n                \"username\": \"string\",\n                \"email\": \"rMzp-2@WeGmYNGbFDpplg.yk\",\n                \"resetPasswordToken\": \"string\",\n                \"registrationToken\": \"string\",\n                \"isActive\": true,\n                \"roles\": [\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                ],\n                \"apiTokens\": [\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                ],\n                \"blocked\": false,\n                \"preferedLanguage\": \"string\",\n                \"createdAt\": \"1965-01-21T12:10:28.894Z\",\n                \"updatedAt\": \"1967-11-22T15:59:31.871Z\",\n                \"publishedAt\": \"1994-08-27T02:52:47.599Z\",\n                \"createdBy\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"updatedBy\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"locale\": \"string\",\n                \"localizations\": [\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                ]\n              },\n              \"updatedBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"locale\": \"string\",\n              \"localizations\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\",\n              \"action\": \"string\",\n              \"role\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"createdAt\": \"2005-08-25T23:54:33.842Z\",\n              \"updatedAt\": \"2010-04-24T04:31:13.905Z\",\n              \"publishedAt\": \"2015-10-20T01:52:44.623Z\",\n              \"createdBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\",\n                \"firstname\": \"string\",\n                \"lastname\": \"string\",\n                \"username\": \"string\",\n                \"email\": \"2Wi@H.ozt\",\n                \"resetPasswordToken\": \"string\",\n                \"registrationToken\": \"string\",\n                \"isActive\": false,\n                \"roles\": [\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                ],\n                \"apiTokens\": [\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                ],\n                \"blocked\": false,\n                \"preferedLanguage\": \"string\",\n                \"createdAt\": \"1995-08-26T16:53:40.098Z\",\n                \"updatedAt\": \"2006-06-23T06:59:49.790Z\",\n                \"publishedAt\": \"1959-06-18T18:26:30.985Z\",\n                \"createdBy\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"updatedBy\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"locale\": \"string\",\n                \"localizations\": [\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                ]\n              },\n              \"updatedBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"locale\": \"string\",\n              \"localizations\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            }\n          ],\n          \"users\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            }\n          ],\n          \"createdAt\": \"2020-10-04T17:44:35.928Z\",\n          \"updatedAt\": \"1999-04-06T00:23:36.772Z\",\n          \"publishedAt\": \"2017-03-19T00:23:33.834Z\",\n          \"createdBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"updatedBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"locale\": \"string\",\n          \"localizations\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            }\n          ]\n        },\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"company\": \"string\",\n        \"title\": \"string\",\n        \"phone\": \"string\",\n        \"approved\": true,\n        \"isUserNotified\": true,\n        \"isAdminNotified\": false,\n        \"isApprovalEmailSent\": true,\n        \"country\": \"string\",\n        \"auth0SecretToken\": \"string\",\n        \"userAuth0Status\": true,\n        \"actionRequired\": \"string\",\n        \"createdAt\": \"2009-09-18T14:33:14.176Z\",\n        \"updatedAt\": \"1958-03-12T19:23:16.948Z\",\n        \"publishedAt\": \"1972-01-21T11:42:18.661Z\",\n        \"createdBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"updatedBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"locale\": \"string\",\n        \"localizations\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ],\n        \"strapi_stage\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\",\n          \"name\": \"string\",\n          \"color\": \"string\",\n          \"workflow\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\",\n            \"name\": \"string\",\n            \"stages\": [\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              }\n            ],\n            \"stageRequiredToPublish\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            \"contentTypes\": \"\",\n            \"createdAt\": \"1966-08-22T18:18:20.747Z\",\n            \"updatedAt\": \"2016-03-04T03:25:56.900Z\",\n            \"publishedAt\": \"1949-10-14T12:21:18.535Z\",\n            \"createdBy\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            \"updatedBy\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            \"locale\": \"string\",\n            \"localizations\": [\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              }\n            ]\n          },\n          \"permissions\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            }\n          ],\n          \"createdAt\": \"1999-05-23T09:33:41.256Z\",\n          \"updatedAt\": \"2025-07-01T04:08:40.151Z\",\n          \"publishedAt\": \"2013-10-04T13:11:27.839Z\",\n          \"createdBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"updatedBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"locale\": \"string\",\n          \"localizations\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            }\n          ]\n        },\n        \"strapi_assignee\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        }\n      },\n      \"action\": \"string\",\n      \"description\": \"string\",\n      \"createdAt\": \"2026-06-07T18:37:39.906Z\",\n      \"updatedAt\": \"2017-05-22T23:39:08.757Z\",\n      \"publishedAt\": \"1981-05-06T23:25:39.389Z\",\n      \"createdBy\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\"\n      },\n      \"updatedBy\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\"\n      },\n      \"locale\": \"string\",\n      \"localizations\": [\n        {\n          \"id\": \"string\",\n          \"documentId\": \"string\",\n          \"user\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"action\": \"string\",\n          \"description\": \"string\",\n          \"createdAt\": \"1996-10-01T11:28:28.212Z\",\n          \"updatedAt\": \"1967-02-04T00:23:28.845Z\",\n          \"publishedAt\": \"1976-11-14T20:26:58.719Z\",\n          \"createdBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"updatedBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"locale\": \"string\",\n          \"localizations\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            }\n          ],\n          \"strapi_stage\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"strapi_assignee\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        },\n        {\n          \"id\": \"string\",\n          \"documentId\": \"string\",\n          \"user\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"action\": \"string\",\n          \"description\": \"string\",\n          \"createdAt\": \"1967-03-15T18:05:20.544Z\",\n          \"updatedAt\": \"2018-04-19T18:20:37.189Z\",\n          \"publishedAt\": \"2003-06-16T17:10:14.764Z\",\n          \"createdBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"updatedBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"locale\": \"string\",\n          \"localizations\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            }\n          ],\n          \"strapi_stage\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"strapi_assignee\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        }\n      ],\n      \"strapi_stage\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\"\n      },\n      \"strapi_assignee\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\"\n      }\n    }\n  ],\n  \"meta\": {\n    \"pagination\": {\n      \"page\": 687,\n      \"pageSize\": 1241,\n      \"pageCount\": 0,\n      \"total\": 514\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fd835685-de99-4158-a05e-31263f9370b1",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pagination[withCount]",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "pagination[page]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination[pageSize]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination[start]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination[limit]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "populate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters[key_0]",
+                      "value": "5438.157440163204"
+                    },
+                    {
+                      "key": "filters[key_1]",
+                      "value": "true"
+                    },
+                    {
+                      "key": "filters[key_2]",
+                      "value": "true"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6210cfd7-9c5c-4866-9477-531f78d4ac0c",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pagination[withCount]",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "pagination[page]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination[pageSize]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination[start]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination[limit]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "populate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters[key_0]",
+                      "value": "5438.157440163204"
+                    },
+                    {
+                      "key": "filters[key_1]",
+                      "value": "true"
+                    },
+                    {
+                      "key": "filters[key_2]",
+                      "value": "true"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c6794f62-cc6b-4fc3-a1c9-c8105d3901f5",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pagination[withCount]",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "pagination[page]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination[pageSize]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination[start]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination[limit]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "populate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters[key_0]",
+                      "value": "5438.157440163204"
+                    },
+                    {
+                      "key": "filters[key_1]",
+                      "value": "true"
+                    },
+                    {
+                      "key": "filters[key_2]",
+                      "value": "true"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "83aabd59-1735-42d7-97e7-e8e2a500aa92",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pagination[withCount]",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "pagination[page]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination[pageSize]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination[start]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination[limit]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "populate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters[key_0]",
+                      "value": "5438.157440163204"
+                    },
+                    {
+                      "key": "filters[key_1]",
+                      "value": "true"
+                    },
+                    {
+                      "key": "filters[key_2]",
+                      "value": "true"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d5d97903-8c35-4e04-9855-06f107367a1e",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pagination[withCount]",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "pagination[page]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination[pageSize]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination[start]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination[limit]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "populate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters[key_0]",
+                      "value": "5438.157440163204"
+                    },
+                    {
+                      "key": "filters[key_1]",
+                      "value": "true"
+                    },
+                    {
+                      "key": "filters[key_2]",
+                      "value": "true"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "212a3593-468d-49fd-9247-9e189ac34fcb",
+          "name": "post/audit-user-trails",
+          "request": {
+            "name": "post/audit-user-trails",
+            "description": {},
+            "url": {
+              "path": [
+                "audit-user-trails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": {\n    \"user\": \"<integer>\",\n    \"action\": \"<string>\",\n    \"description\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"localizations\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"strapi_stage\": \"<integer>\",\n    \"strapi_assignee\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "49e15dda-ce7f-4597-a6f9-daca7fa8b001",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"user\": \"<integer>\",\n    \"action\": \"<string>\",\n    \"description\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"localizations\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"strapi_stage\": \"<integer>\",\n    \"strapi_assignee\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": \"string\",\n    \"documentId\": \"string\",\n    \"user\": {\n      \"id\": \"string\",\n      \"documentId\": \"string\",\n      \"username\": \"string\",\n      \"email\": \"6GbEG@DyiEIdEHOcaLhBNJbJPxCFKLVIQrpeu.iyw\",\n      \"provider\": \"string\",\n      \"resetPasswordToken\": \"string\",\n      \"confirmationToken\": \"string\",\n      \"confirmed\": true,\n      \"blocked\": false,\n      \"role\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"type\": \"string\",\n        \"permissions\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\",\n            \"action\": \"string\",\n            \"role\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            \"createdAt\": \"1968-09-02T14:18:53.912Z\",\n            \"updatedAt\": \"2010-10-02T10:23:21.438Z\",\n            \"publishedAt\": \"2010-07-23T19:25:34.224Z\",\n            \"createdBy\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\",\n              \"firstname\": \"string\",\n              \"lastname\": \"string\",\n              \"username\": \"string\",\n              \"email\": \"DOy@Z.bo\",\n              \"resetPasswordToken\": \"string\",\n              \"registrationToken\": \"string\",\n              \"isActive\": true,\n              \"roles\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"code\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"description\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"users\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"permissions\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"publishedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"locale\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"localizations\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"code\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"description\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"users\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"permissions\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"publishedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"locale\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"localizations\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ],\n              \"apiTokens\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ],\n              \"blocked\": false,\n              \"preferedLanguage\": \"string\",\n              \"createdAt\": \"2014-12-23T14:35:06.374Z\",\n              \"updatedAt\": \"1955-09-26T09:33:20.776Z\",\n              \"publishedAt\": \"1962-08-22T11:05:29.920Z\",\n              \"createdBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"updatedBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"locale\": \"string\",\n              \"localizations\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"updatedBy\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            \"locale\": \"string\",\n            \"localizations\": [\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              }\n            ]\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\",\n            \"action\": \"string\",\n            \"role\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            \"createdAt\": \"1966-04-12T09:18:45.002Z\",\n            \"updatedAt\": \"2024-07-01T14:29:42.089Z\",\n            \"publishedAt\": \"1967-02-14T01:17:23.760Z\",\n            \"createdBy\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\",\n              \"firstname\": \"string\",\n              \"lastname\": \"string\",\n              \"username\": \"string\",\n              \"email\": \"1IGRA9@GyybRusclwwZIUU.uy\",\n              \"resetPasswordToken\": \"string\",\n              \"registrationToken\": \"string\",\n              \"isActive\": false,\n              \"roles\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"code\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"description\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"users\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"permissions\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"publishedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"locale\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"localizations\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"code\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"description\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"users\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"permissions\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"publishedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"locale\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"localizations\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ],\n              \"apiTokens\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ],\n              \"blocked\": false,\n              \"preferedLanguage\": \"string\",\n              \"createdAt\": \"1996-10-12T05:49:37.868Z\",\n              \"updatedAt\": \"2007-01-12T12:08:48.402Z\",\n              \"publishedAt\": \"1997-09-26T14:11:09.415Z\",\n              \"createdBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"updatedBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"locale\": \"string\",\n              \"localizations\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"updatedBy\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            \"locale\": \"string\",\n            \"localizations\": [\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              }\n            ]\n          }\n        ],\n        \"users\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ],\n        \"createdAt\": \"1997-07-06T10:43:33.016Z\",\n        \"updatedAt\": \"1990-08-18T22:16:11.135Z\",\n        \"publishedAt\": \"1995-12-08T02:23:05.348Z\",\n        \"createdBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"updatedBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"locale\": \"string\",\n        \"localizations\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ]\n      },\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"company\": \"string\",\n      \"title\": \"string\",\n      \"phone\": \"string\",\n      \"approved\": false,\n      \"isUserNotified\": false,\n      \"isAdminNotified\": true,\n      \"isApprovalEmailSent\": false,\n      \"country\": \"string\",\n      \"auth0SecretToken\": \"string\",\n      \"userAuth0Status\": true,\n      \"actionRequired\": \"string\",\n      \"createdAt\": \"1957-03-10T23:41:45.008Z\",\n      \"updatedAt\": \"1958-07-03T04:36:34.749Z\",\n      \"publishedAt\": \"1983-10-03T03:50:08.472Z\",\n      \"createdBy\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\"\n      },\n      \"updatedBy\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\"\n      },\n      \"locale\": \"string\",\n      \"localizations\": [\n        {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        }\n      ],\n      \"strapi_stage\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\",\n        \"name\": \"string\",\n        \"color\": \"string\",\n        \"workflow\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\",\n          \"name\": \"string\",\n          \"stages\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            }\n          ],\n          \"stageRequiredToPublish\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"contentTypes\": \"\",\n          \"createdAt\": \"1995-12-02T10:19:12.456Z\",\n          \"updatedAt\": \"1952-01-02T18:58:44.444Z\",\n          \"publishedAt\": \"1979-12-22T02:32:34.507Z\",\n          \"createdBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"updatedBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"locale\": \"string\",\n          \"localizations\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            }\n          ]\n        },\n        \"permissions\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ],\n        \"createdAt\": \"1951-07-19T09:18:22.504Z\",\n        \"updatedAt\": \"2022-06-22T16:55:56.087Z\",\n        \"publishedAt\": \"2009-09-22T09:29:00.393Z\",\n        \"createdBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"updatedBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"locale\": \"string\",\n        \"localizations\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ]\n      },\n      \"strapi_assignee\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\"\n      }\n    },\n    \"action\": \"string\",\n    \"description\": \"string\",\n    \"createdAt\": \"1962-01-07T19:12:56.690Z\",\n    \"updatedAt\": \"1957-08-26T21:42:26.744Z\",\n    \"publishedAt\": \"2014-12-17T09:14:56.436Z\",\n    \"createdBy\": {\n      \"id\": \"string\",\n      \"documentId\": \"string\"\n    },\n    \"updatedBy\": {\n      \"id\": \"string\",\n      \"documentId\": \"string\"\n    },\n    \"locale\": \"string\",\n    \"localizations\": [\n      {\n        \"id\": \"string\",\n        \"documentId\": \"string\",\n        \"user\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"action\": \"string\",\n        \"description\": \"string\",\n        \"createdAt\": \"2025-05-21T09:32:46.859Z\",\n        \"updatedAt\": \"1966-03-19T15:52:39.545Z\",\n        \"publishedAt\": \"1991-08-13T12:21:07.174Z\",\n        \"createdBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"updatedBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"locale\": \"string\",\n        \"localizations\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ],\n        \"strapi_stage\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"strapi_assignee\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"documentId\": \"string\",\n        \"user\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"action\": \"string\",\n        \"description\": \"string\",\n        \"createdAt\": \"2020-03-31T04:41:30.792Z\",\n        \"updatedAt\": \"1961-02-01T23:28:53.032Z\",\n        \"publishedAt\": \"1970-07-19T16:22:34.889Z\",\n        \"createdBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"updatedBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"locale\": \"string\",\n        \"localizations\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ],\n        \"strapi_stage\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"strapi_assignee\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        }\n      }\n    ],\n    \"strapi_stage\": {\n      \"id\": \"string\",\n      \"documentId\": \"string\"\n    },\n    \"strapi_assignee\": {\n      \"id\": \"string\",\n      \"documentId\": \"string\"\n    }\n  },\n  \"meta\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f6c26ee7-ed00-4eac-930b-e7a1b1f9d354",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"user\": \"<integer>\",\n    \"action\": \"<string>\",\n    \"description\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"localizations\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"strapi_stage\": \"<integer>\",\n    \"strapi_assignee\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0c3896af-319d-4848-b7cb-c867373527fc",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"user\": \"<integer>\",\n    \"action\": \"<string>\",\n    \"description\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"localizations\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"strapi_stage\": \"<integer>\",\n    \"strapi_assignee\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cf3031ec-7474-4889-b2d9-99709501fe78",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"user\": \"<integer>\",\n    \"action\": \"<string>\",\n    \"description\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"localizations\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"strapi_stage\": \"<integer>\",\n    \"strapi_assignee\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "58c1553a-1ab6-4487-bed4-137233e1a549",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"user\": \"<integer>\",\n    \"action\": \"<string>\",\n    \"description\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"localizations\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"strapi_stage\": \"<integer>\",\n    \"strapi_assignee\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c25ce6bd-cb88-4c7d-a2bc-a51382bfd121",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"user\": \"<integer>\",\n    \"action\": \"<string>\",\n    \"description\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"localizations\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"strapi_stage\": \"<integer>\",\n    \"strapi_assignee\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b200703-365c-41db-b247-46998321a2b0",
+          "name": "get/audit-user-trails/{id}",
+          "request": {
+            "name": "get/audit-user-trails/{id}",
+            "description": {},
+            "url": {
+              "path": [
+                "audit-user-trails",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "58277d33-cd51-4901-8257-bfc0862a9ef3",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": \"string\",\n    \"documentId\": \"string\",\n    \"user\": {\n      \"id\": \"string\",\n      \"documentId\": \"string\",\n      \"username\": \"string\",\n      \"email\": \"6GbEG@DyiEIdEHOcaLhBNJbJPxCFKLVIQrpeu.iyw\",\n      \"provider\": \"string\",\n      \"resetPasswordToken\": \"string\",\n      \"confirmationToken\": \"string\",\n      \"confirmed\": true,\n      \"blocked\": false,\n      \"role\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"type\": \"string\",\n        \"permissions\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\",\n            \"action\": \"string\",\n            \"role\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            \"createdAt\": \"1968-09-02T14:18:53.912Z\",\n            \"updatedAt\": \"2010-10-02T10:23:21.438Z\",\n            \"publishedAt\": \"2010-07-23T19:25:34.224Z\",\n            \"createdBy\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\",\n              \"firstname\": \"string\",\n              \"lastname\": \"string\",\n              \"username\": \"string\",\n              \"email\": \"DOy@Z.bo\",\n              \"resetPasswordToken\": \"string\",\n              \"registrationToken\": \"string\",\n              \"isActive\": true,\n              \"roles\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"code\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"description\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"users\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"permissions\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"publishedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"locale\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"localizations\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"code\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"description\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"users\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"permissions\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"publishedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"locale\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"localizations\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ],\n              \"apiTokens\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ],\n              \"blocked\": false,\n              \"preferedLanguage\": \"string\",\n              \"createdAt\": \"2014-12-23T14:35:06.374Z\",\n              \"updatedAt\": \"1955-09-26T09:33:20.776Z\",\n              \"publishedAt\": \"1962-08-22T11:05:29.920Z\",\n              \"createdBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"updatedBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"locale\": \"string\",\n              \"localizations\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"updatedBy\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            \"locale\": \"string\",\n            \"localizations\": [\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              }\n            ]\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\",\n            \"action\": \"string\",\n            \"role\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            \"createdAt\": \"1966-04-12T09:18:45.002Z\",\n            \"updatedAt\": \"2024-07-01T14:29:42.089Z\",\n            \"publishedAt\": \"1967-02-14T01:17:23.760Z\",\n            \"createdBy\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\",\n              \"firstname\": \"string\",\n              \"lastname\": \"string\",\n              \"username\": \"string\",\n              \"email\": \"1IGRA9@GyybRusclwwZIUU.uy\",\n              \"resetPasswordToken\": \"string\",\n              \"registrationToken\": \"string\",\n              \"isActive\": false,\n              \"roles\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"code\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"description\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"users\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"permissions\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"publishedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"locale\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"localizations\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"code\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"description\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"users\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"permissions\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"publishedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"locale\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"localizations\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ],\n              \"apiTokens\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ],\n              \"blocked\": false,\n              \"preferedLanguage\": \"string\",\n              \"createdAt\": \"1996-10-12T05:49:37.868Z\",\n              \"updatedAt\": \"2007-01-12T12:08:48.402Z\",\n              \"publishedAt\": \"1997-09-26T14:11:09.415Z\",\n              \"createdBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"updatedBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"locale\": \"string\",\n              \"localizations\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"updatedBy\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            \"locale\": \"string\",\n            \"localizations\": [\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              }\n            ]\n          }\n        ],\n        \"users\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ],\n        \"createdAt\": \"1997-07-06T10:43:33.016Z\",\n        \"updatedAt\": \"1990-08-18T22:16:11.135Z\",\n        \"publishedAt\": \"1995-12-08T02:23:05.348Z\",\n        \"createdBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"updatedBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"locale\": \"string\",\n        \"localizations\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ]\n      },\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"company\": \"string\",\n      \"title\": \"string\",\n      \"phone\": \"string\",\n      \"approved\": false,\n      \"isUserNotified\": false,\n      \"isAdminNotified\": true,\n      \"isApprovalEmailSent\": false,\n      \"country\": \"string\",\n      \"auth0SecretToken\": \"string\",\n      \"userAuth0Status\": true,\n      \"actionRequired\": \"string\",\n      \"createdAt\": \"1957-03-10T23:41:45.008Z\",\n      \"updatedAt\": \"1958-07-03T04:36:34.749Z\",\n      \"publishedAt\": \"1983-10-03T03:50:08.472Z\",\n      \"createdBy\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\"\n      },\n      \"updatedBy\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\"\n      },\n      \"locale\": \"string\",\n      \"localizations\": [\n        {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        }\n      ],\n      \"strapi_stage\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\",\n        \"name\": \"string\",\n        \"color\": \"string\",\n        \"workflow\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\",\n          \"name\": \"string\",\n          \"stages\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            }\n          ],\n          \"stageRequiredToPublish\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"contentTypes\": \"\",\n          \"createdAt\": \"1995-12-02T10:19:12.456Z\",\n          \"updatedAt\": \"1952-01-02T18:58:44.444Z\",\n          \"publishedAt\": \"1979-12-22T02:32:34.507Z\",\n          \"createdBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"updatedBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"locale\": \"string\",\n          \"localizations\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            }\n          ]\n        },\n        \"permissions\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ],\n        \"createdAt\": \"1951-07-19T09:18:22.504Z\",\n        \"updatedAt\": \"2022-06-22T16:55:56.087Z\",\n        \"publishedAt\": \"2009-09-22T09:29:00.393Z\",\n        \"createdBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"updatedBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"locale\": \"string\",\n        \"localizations\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ]\n      },\n      \"strapi_assignee\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\"\n      }\n    },\n    \"action\": \"string\",\n    \"description\": \"string\",\n    \"createdAt\": \"1962-01-07T19:12:56.690Z\",\n    \"updatedAt\": \"1957-08-26T21:42:26.744Z\",\n    \"publishedAt\": \"2014-12-17T09:14:56.436Z\",\n    \"createdBy\": {\n      \"id\": \"string\",\n      \"documentId\": \"string\"\n    },\n    \"updatedBy\": {\n      \"id\": \"string\",\n      \"documentId\": \"string\"\n    },\n    \"locale\": \"string\",\n    \"localizations\": [\n      {\n        \"id\": \"string\",\n        \"documentId\": \"string\",\n        \"user\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"action\": \"string\",\n        \"description\": \"string\",\n        \"createdAt\": \"2025-05-21T09:32:46.859Z\",\n        \"updatedAt\": \"1966-03-19T15:52:39.545Z\",\n        \"publishedAt\": \"1991-08-13T12:21:07.174Z\",\n        \"createdBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"updatedBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"locale\": \"string\",\n        \"localizations\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ],\n        \"strapi_stage\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"strapi_assignee\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"documentId\": \"string\",\n        \"user\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"action\": \"string\",\n        \"description\": \"string\",\n        \"createdAt\": \"2020-03-31T04:41:30.792Z\",\n        \"updatedAt\": \"1961-02-01T23:28:53.032Z\",\n        \"publishedAt\": \"1970-07-19T16:22:34.889Z\",\n        \"createdBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"updatedBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"locale\": \"string\",\n        \"localizations\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ],\n        \"strapi_stage\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"strapi_assignee\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        }\n      }\n    ],\n    \"strapi_stage\": {\n      \"id\": \"string\",\n      \"documentId\": \"string\"\n    },\n    \"strapi_assignee\": {\n      \"id\": \"string\",\n      \"documentId\": \"string\"\n    }\n  },\n  \"meta\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "26975150-1568-4476-8287-29f2402f1fa6",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f62d51e8-cdc5-4e37-a3eb-48e659770c2e",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5daec431-5e40-4df8-a3a6-ac619b4ab0bd",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "967b61a0-9a28-4285-9043-2430a2cd992e",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "161f9aa3-fe30-491d-b934-eabcc341b3e9",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cdc98701-6fd2-445b-99b6-70fb5a1f2ccf",
+          "name": "put/audit-user-trails/{id}",
+          "request": {
+            "name": "put/audit-user-trails/{id}",
+            "description": {},
+            "url": {
+              "path": [
+                "audit-user-trails",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": {\n    \"user\": \"<integer>\",\n    \"action\": \"<string>\",\n    \"description\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"localizations\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"strapi_stage\": \"<integer>\",\n    \"strapi_assignee\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a7a49ed9-bba9-490d-8f4c-8925462c74ab",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"user\": \"<integer>\",\n    \"action\": \"<string>\",\n    \"description\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"localizations\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"strapi_stage\": \"<integer>\",\n    \"strapi_assignee\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": \"string\",\n    \"documentId\": \"string\",\n    \"user\": {\n      \"id\": \"string\",\n      \"documentId\": \"string\",\n      \"username\": \"string\",\n      \"email\": \"6GbEG@DyiEIdEHOcaLhBNJbJPxCFKLVIQrpeu.iyw\",\n      \"provider\": \"string\",\n      \"resetPasswordToken\": \"string\",\n      \"confirmationToken\": \"string\",\n      \"confirmed\": true,\n      \"blocked\": false,\n      \"role\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"type\": \"string\",\n        \"permissions\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\",\n            \"action\": \"string\",\n            \"role\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            \"createdAt\": \"1968-09-02T14:18:53.912Z\",\n            \"updatedAt\": \"2010-10-02T10:23:21.438Z\",\n            \"publishedAt\": \"2010-07-23T19:25:34.224Z\",\n            \"createdBy\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\",\n              \"firstname\": \"string\",\n              \"lastname\": \"string\",\n              \"username\": \"string\",\n              \"email\": \"DOy@Z.bo\",\n              \"resetPasswordToken\": \"string\",\n              \"registrationToken\": \"string\",\n              \"isActive\": true,\n              \"roles\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"code\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"description\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"users\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"permissions\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"publishedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"locale\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"localizations\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"code\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"description\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"users\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"permissions\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"publishedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"locale\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"localizations\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ],\n              \"apiTokens\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ],\n              \"blocked\": false,\n              \"preferedLanguage\": \"string\",\n              \"createdAt\": \"2014-12-23T14:35:06.374Z\",\n              \"updatedAt\": \"1955-09-26T09:33:20.776Z\",\n              \"publishedAt\": \"1962-08-22T11:05:29.920Z\",\n              \"createdBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"updatedBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"locale\": \"string\",\n              \"localizations\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"updatedBy\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            \"locale\": \"string\",\n            \"localizations\": [\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              }\n            ]\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\",\n            \"action\": \"string\",\n            \"role\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            \"createdAt\": \"1966-04-12T09:18:45.002Z\",\n            \"updatedAt\": \"2024-07-01T14:29:42.089Z\",\n            \"publishedAt\": \"1967-02-14T01:17:23.760Z\",\n            \"createdBy\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\",\n              \"firstname\": \"string\",\n              \"lastname\": \"string\",\n              \"username\": \"string\",\n              \"email\": \"1IGRA9@GyybRusclwwZIUU.uy\",\n              \"resetPasswordToken\": \"string\",\n              \"registrationToken\": \"string\",\n              \"isActive\": false,\n              \"roles\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"code\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"description\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"users\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"permissions\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"publishedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"locale\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"localizations\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"code\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"description\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"users\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"permissions\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"publishedAt\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"createdBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"updatedBy\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"locale\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"localizations\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ],\n              \"apiTokens\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ],\n              \"blocked\": false,\n              \"preferedLanguage\": \"string\",\n              \"createdAt\": \"1996-10-12T05:49:37.868Z\",\n              \"updatedAt\": \"2007-01-12T12:08:48.402Z\",\n              \"publishedAt\": \"1997-09-26T14:11:09.415Z\",\n              \"createdBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"updatedBy\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              \"locale\": \"string\",\n              \"localizations\": [\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"documentId\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"updatedBy\": {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            \"locale\": \"string\",\n            \"localizations\": [\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              },\n              {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"documentId\": \"string\"\n              }\n            ]\n          }\n        ],\n        \"users\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ],\n        \"createdAt\": \"1997-07-06T10:43:33.016Z\",\n        \"updatedAt\": \"1990-08-18T22:16:11.135Z\",\n        \"publishedAt\": \"1995-12-08T02:23:05.348Z\",\n        \"createdBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"updatedBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"locale\": \"string\",\n        \"localizations\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ]\n      },\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"company\": \"string\",\n      \"title\": \"string\",\n      \"phone\": \"string\",\n      \"approved\": false,\n      \"isUserNotified\": false,\n      \"isAdminNotified\": true,\n      \"isApprovalEmailSent\": false,\n      \"country\": \"string\",\n      \"auth0SecretToken\": \"string\",\n      \"userAuth0Status\": true,\n      \"actionRequired\": \"string\",\n      \"createdAt\": \"1957-03-10T23:41:45.008Z\",\n      \"updatedAt\": \"1958-07-03T04:36:34.749Z\",\n      \"publishedAt\": \"1983-10-03T03:50:08.472Z\",\n      \"createdBy\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\"\n      },\n      \"updatedBy\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\"\n      },\n      \"locale\": \"string\",\n      \"localizations\": [\n        {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        }\n      ],\n      \"strapi_stage\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\",\n        \"name\": \"string\",\n        \"color\": \"string\",\n        \"workflow\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\",\n          \"name\": \"string\",\n          \"stages\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            }\n          ],\n          \"stageRequiredToPublish\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"contentTypes\": \"\",\n          \"createdAt\": \"1995-12-02T10:19:12.456Z\",\n          \"updatedAt\": \"1952-01-02T18:58:44.444Z\",\n          \"publishedAt\": \"1979-12-22T02:32:34.507Z\",\n          \"createdBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"updatedBy\": {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          \"locale\": \"string\",\n          \"localizations\": [\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            },\n            {\n              \"id\": \"string\",\n              \"documentId\": \"string\"\n            }\n          ]\n        },\n        \"permissions\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ],\n        \"createdAt\": \"1951-07-19T09:18:22.504Z\",\n        \"updatedAt\": \"2022-06-22T16:55:56.087Z\",\n        \"publishedAt\": \"2009-09-22T09:29:00.393Z\",\n        \"createdBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"updatedBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"locale\": \"string\",\n        \"localizations\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ]\n      },\n      \"strapi_assignee\": {\n        \"id\": \"string\",\n        \"documentId\": \"string\"\n      }\n    },\n    \"action\": \"string\",\n    \"description\": \"string\",\n    \"createdAt\": \"1962-01-07T19:12:56.690Z\",\n    \"updatedAt\": \"1957-08-26T21:42:26.744Z\",\n    \"publishedAt\": \"2014-12-17T09:14:56.436Z\",\n    \"createdBy\": {\n      \"id\": \"string\",\n      \"documentId\": \"string\"\n    },\n    \"updatedBy\": {\n      \"id\": \"string\",\n      \"documentId\": \"string\"\n    },\n    \"locale\": \"string\",\n    \"localizations\": [\n      {\n        \"id\": \"string\",\n        \"documentId\": \"string\",\n        \"user\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"action\": \"string\",\n        \"description\": \"string\",\n        \"createdAt\": \"2025-05-21T09:32:46.859Z\",\n        \"updatedAt\": \"1966-03-19T15:52:39.545Z\",\n        \"publishedAt\": \"1991-08-13T12:21:07.174Z\",\n        \"createdBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"updatedBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"locale\": \"string\",\n        \"localizations\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ],\n        \"strapi_stage\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"strapi_assignee\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"documentId\": \"string\",\n        \"user\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"action\": \"string\",\n        \"description\": \"string\",\n        \"createdAt\": \"2020-03-31T04:41:30.792Z\",\n        \"updatedAt\": \"1961-02-01T23:28:53.032Z\",\n        \"publishedAt\": \"1970-07-19T16:22:34.889Z\",\n        \"createdBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"updatedBy\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"locale\": \"string\",\n        \"localizations\": [\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"documentId\": \"string\"\n          }\n        ],\n        \"strapi_stage\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        },\n        \"strapi_assignee\": {\n          \"id\": \"string\",\n          \"documentId\": \"string\"\n        }\n      }\n    ],\n    \"strapi_stage\": {\n      \"id\": \"string\",\n      \"documentId\": \"string\"\n    },\n    \"strapi_assignee\": {\n      \"id\": \"string\",\n      \"documentId\": \"string\"\n    }\n  },\n  \"meta\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "35f0c476-10c9-4501-99b6-af1f74dea9e9",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"user\": \"<integer>\",\n    \"action\": \"<string>\",\n    \"description\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"localizations\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"strapi_stage\": \"<integer>\",\n    \"strapi_assignee\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "11f744b0-28b2-4e51-a5f5-6c588698b18d",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"user\": \"<integer>\",\n    \"action\": \"<string>\",\n    \"description\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"localizations\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"strapi_stage\": \"<integer>\",\n    \"strapi_assignee\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5902bd73-190c-436e-855d-425c5dd6fc7e",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"user\": \"<integer>\",\n    \"action\": \"<string>\",\n    \"description\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"localizations\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"strapi_stage\": \"<integer>\",\n    \"strapi_assignee\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9c4fbbd2-03a3-499a-ab46-e807603ab4b1",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"user\": \"<integer>\",\n    \"action\": \"<string>\",\n    \"description\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"localizations\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"strapi_stage\": \"<integer>\",\n    \"strapi_assignee\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1233c03d-62cf-4f65-897e-aa138b11169e",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"user\": \"<integer>\",\n    \"action\": \"<string>\",\n    \"description\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"localizations\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"strapi_stage\": \"<integer>\",\n    \"strapi_assignee\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7b7bd0c1-cf2a-4a88-b1a6-dca4ab68a958",
+          "name": "delete/audit-user-trails/{id}",
+          "request": {
+            "name": "delete/audit-user-trails/{id}",
+            "description": {},
+            "url": {
+              "path": [
+                "audit-user-trails",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "61c58ae1-60a8-4c54-bc01-7c437511e20f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "2126",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "247680e1-e674-4195-868b-343ae23035f8",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6fb13258-a885-4e8d-a9d8-c2e51e299136",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ba3e0768-b550-4fef-ac3e-4fc38783a152",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "85957774-12a5-4d85-a452-eb3bbccf21ec",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e1ef4a27-6074-46ae-80d1-456878396347",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit-user-trails",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"status\": 495,\n    \"name\": \"string\",\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:1337/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "533e4121-9e12-466e-aba2-2d3ef5f8609e",
+    "name": "DOCUMENTATION Audit User Trail API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: TEAM\n Email: contact-email@something.io",
+      "type": "text/plain"
+    }
+  }
+}

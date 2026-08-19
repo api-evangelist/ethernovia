@@ -1,0 +1,610 @@
+{
+  "item": [
+    {
+      "id": "b99065d4-51e8-4139-ad7c-46e52130f2cd",
+      "name": "Upload - File",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ca2c9b12-2da9-439a-af1b-5e1d7c8d44af",
+          "name": "Upload files",
+          "request": {
+            "name": "Upload files",
+            "description": {
+              "content": "Upload files",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "upload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "files",
+                  "value": "[\"<binary>\",\"<binary>\"]",
+                  "type": "text",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "path",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "The folder where the file(s) will be uploaded to (only supported on strapi-provider-upload-aws-s3)."
+                },
+                {
+                  "key": "refId",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "The ID of the entry which the file(s) will be linked to"
+                },
+                {
+                  "key": "ref",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "The unique ID (uid) of the model which the file(s) will be linked to (api::restaurant.restaurant)."
+                },
+                {
+                  "key": "field",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "The field of the entry which the file(s) will be precisely linked to."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e9d33e60-722f-4210-a725-e7a9f92638f4",
+              "name": "response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The folder where the file(s) will be uploaded to (only supported on strapi-provider-upload-aws-s3).",
+                        "type": "text/plain"
+                      },
+                      "key": "path",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The ID of the entry which the file(s) will be linked to",
+                        "type": "text/plain"
+                      },
+                      "key": "refId",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The unique ID (uid) of the model which the file(s) will be linked to (api::restaurant.restaurant).",
+                        "type": "text/plain"
+                      },
+                      "key": "ref",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The field of the entry which the file(s) will be precisely linked to.",
+                        "type": "text/plain"
+                      },
+                      "key": "field",
+                      "value": "<string>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 8272.142481861116,\n    \"name\": \"string\",\n    \"alternativeText\": \"string\",\n    \"caption\": \"string\",\n    \"width\": 93.05051563240684,\n    \"height\": 9838.652110910698,\n    \"formats\": 8300.86605581996,\n    \"hash\": \"string\",\n    \"ext\": \"string\",\n    \"mime\": \"string\",\n    \"size\": 5888.742820539577,\n    \"url\": \"string\",\n    \"previewUrl\": \"string\",\n    \"provider\": \"string\",\n    \"provider_metadata\": {},\n    \"createdAt\": \"1973-02-18T21:16:23.023Z\",\n    \"updatedAt\": \"1997-07-01T02:36:01.134Z\"\n  },\n  {\n    \"id\": 7513.585486855462,\n    \"name\": \"string\",\n    \"alternativeText\": \"string\",\n    \"caption\": \"string\",\n    \"width\": 3462.6173837941874,\n    \"height\": 6099.383034711613,\n    \"formats\": 552.4464825306496,\n    \"hash\": \"string\",\n    \"ext\": \"string\",\n    \"mime\": \"string\",\n    \"size\": 247.01814843449023,\n    \"url\": \"string\",\n    \"previewUrl\": \"string\",\n    \"provider\": \"string\",\n    \"provider_metadata\": {},\n    \"createdAt\": \"1986-06-16T03:01:18.744Z\",\n    \"updatedAt\": \"1982-10-16T04:06:40.037Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "49f06066-ff44-40b2-a1e7-28c882a9ef90",
+          "name": "Upload file information",
+          "request": {
+            "name": "Upload file information",
+            "description": {
+              "content": "Upload file information",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "upload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "{{id}}"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) File id"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "fileInfo",
+                  "value": "{\"name\":\"<string>\",\"alternativeText\":\"<string>\",\"caption\":\"<string>\"}",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "files",
+                  "type": "file",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b3d6b210-59a8-49c5-bba3-124c8a0545aa",
+              "name": "response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "fileInfo",
+                      "value": "{\"name\":\"<string>\",\"alternativeText\":\"<string>\",\"caption\":\"<string>\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 8272.142481861116,\n    \"name\": \"string\",\n    \"alternativeText\": \"string\",\n    \"caption\": \"string\",\n    \"width\": 93.05051563240684,\n    \"height\": 9838.652110910698,\n    \"formats\": 8300.86605581996,\n    \"hash\": \"string\",\n    \"ext\": \"string\",\n    \"mime\": \"string\",\n    \"size\": 5888.742820539577,\n    \"url\": \"string\",\n    \"previewUrl\": \"string\",\n    \"provider\": \"string\",\n    \"provider_metadata\": {},\n    \"createdAt\": \"1973-02-18T21:16:23.023Z\",\n    \"updatedAt\": \"1997-07-01T02:36:01.134Z\"\n  },\n  {\n    \"id\": 7513.585486855462,\n    \"name\": \"string\",\n    \"alternativeText\": \"string\",\n    \"caption\": \"string\",\n    \"width\": 3462.6173837941874,\n    \"height\": 6099.383034711613,\n    \"formats\": 552.4464825306496,\n    \"hash\": \"string\",\n    \"ext\": \"string\",\n    \"mime\": \"string\",\n    \"size\": 247.01814843449023,\n    \"url\": \"string\",\n    \"previewUrl\": \"string\",\n    \"provider\": \"string\",\n    \"provider_metadata\": {},\n    \"createdAt\": \"1986-06-16T03:01:18.744Z\",\n    \"updatedAt\": \"1982-10-16T04:06:40.037Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "71e6ec4d-d6b3-4db8-be94-2bacae2b7f2d",
+          "name": "/upload/files",
+          "request": {
+            "name": "/upload/files",
+            "description": {},
+            "url": {
+              "path": [
+                "upload",
+                "files"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cb736158-eb3d-4a5d-9eb7-5c754a991fe7",
+              "name": "Get a list of files",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "upload",
+                    "files"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 8272.142481861116,\n    \"name\": \"string\",\n    \"alternativeText\": \"string\",\n    \"caption\": \"string\",\n    \"width\": 93.05051563240684,\n    \"height\": 9838.652110910698,\n    \"formats\": 8300.86605581996,\n    \"hash\": \"string\",\n    \"ext\": \"string\",\n    \"mime\": \"string\",\n    \"size\": 5888.742820539577,\n    \"url\": \"string\",\n    \"previewUrl\": \"string\",\n    \"provider\": \"string\",\n    \"provider_metadata\": {},\n    \"createdAt\": \"1973-02-18T21:16:23.023Z\",\n    \"updatedAt\": \"1997-07-01T02:36:01.134Z\"\n  },\n  {\n    \"id\": 7513.585486855462,\n    \"name\": \"string\",\n    \"alternativeText\": \"string\",\n    \"caption\": \"string\",\n    \"width\": 3462.6173837941874,\n    \"height\": 6099.383034711613,\n    \"formats\": 552.4464825306496,\n    \"hash\": \"string\",\n    \"ext\": \"string\",\n    \"mime\": \"string\",\n    \"size\": 247.01814843449023,\n    \"url\": \"string\",\n    \"previewUrl\": \"string\",\n    \"provider\": \"string\",\n    \"provider_metadata\": {},\n    \"createdAt\": \"1986-06-16T03:01:18.744Z\",\n    \"updatedAt\": \"1982-10-16T04:06:40.037Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d89e1aa-fdf1-4cf4-8f03-bc0e1293bd28",
+          "name": "/upload/files/:id",
+          "request": {
+            "name": "/upload/files/:id",
+            "description": {},
+            "url": {
+              "path": [
+                "upload",
+                "files",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "16688946-11fd-4a31-a674-a074e1bf5ade",
+              "name": "Get a specific file",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "upload",
+                    "files",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6126.416046314356,\n  \"name\": \"string\",\n  \"alternativeText\": \"string\",\n  \"caption\": \"string\",\n  \"width\": 9327.292485815055,\n  \"height\": 7048.12943865003,\n  \"formats\": 4856.303042134079,\n  \"hash\": \"string\",\n  \"ext\": \"string\",\n  \"mime\": \"string\",\n  \"size\": 5261.938464089983,\n  \"url\": \"string\",\n  \"previewUrl\": \"string\",\n  \"provider\": \"string\",\n  \"provider_metadata\": {},\n  \"createdAt\": \"2014-08-11T14:53:16.797Z\",\n  \"updatedAt\": \"1967-09-04T12:27:51.449Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9915dc03-64db-4822-baab-f1ffe127a01e",
+          "name": "/upload/files/:id",
+          "request": {
+            "name": "/upload/files/:id",
+            "description": {},
+            "url": {
+              "path": [
+                "upload",
+                "files",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "828c1dc1-3464-4efe-b092-99a0225d1725",
+              "name": "Delete a file",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "upload",
+                    "files",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6126.416046314356,\n  \"name\": \"string\",\n  \"alternativeText\": \"string\",\n  \"caption\": \"string\",\n  \"width\": 9327.292485815055,\n  \"height\": 7048.12943865003,\n  \"formats\": 4856.303042134079,\n  \"hash\": \"string\",\n  \"ext\": \"string\",\n  \"mime\": \"string\",\n  \"size\": 5261.938464089983,\n  \"url\": \"string\",\n  \"previewUrl\": \"string\",\n  \"provider\": \"string\",\n  \"provider_metadata\": {},\n  \"createdAt\": \"2014-08-11T14:53:16.797Z\",\n  \"updatedAt\": \"1967-09-04T12:27:51.449Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:1337/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "637f39f0-db21-43c4-94f4-c5d45a2fa35a",
+    "name": "DOCUMENTATION Upload - File API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: TEAM\n Email: contact-email@something.io",
+      "type": "text/plain"
+    }
+  }
+}

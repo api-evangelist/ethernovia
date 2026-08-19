@@ -1,0 +1,374 @@
+openapi: 3.2.0
+info:
+  version: 1.0.0
+  title: DOCUMENTATION Users-Permissions - Auth API
+  description: Authentication endpoints
+  termsOfService: YOUR_TERMS_OF_SERVICE_URL
+  contact:
+    name: TEAM
+    email: contact-email@something.io
+    url: mywebsite.io
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  x-generation-date: '2026-07-07T06:23:13.532Z'
+servers:
+- url: http://localhost:1337/api
+  description: Development server
+security:
+- bearerAuth: []
+tags:
+- name: Users-Permissions - Auth
+  description: Authentication endpoints
+  externalDocs:
+    description: Find out more
+    url: https://docs.strapi.io/developer-docs/latest/plugins/users-permissions.html
+paths:
+  /connect/{provider}:
+    get:
+      parameters:
+      - name: provider
+        in: path
+        required: true
+        description: Provider name
+        schema:
+          type: string
+          pattern: .*
+      tags:
+      - Users-Permissions - Auth
+      summary: Login with a provider
+      description: Redirects to provider login before being redirect to /auth/{provider}/callback
+      responses:
+        '301':
+          description: Redirect response
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /auth/local:
+    post:
+      tags:
+      - Users-Permissions - Auth
+      summary: Local login
+      description: Returns a jwt token and user info
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                identifier:
+                  type: string
+                password:
+                  type: string
+            example:
+              identifier: foobar
+              password: Test1234
+        required: true
+      responses:
+        '200':
+          description: Connection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Users-Permissions-UserRegistration'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /auth/local/register:
+    post:
+      tags:
+      - Users-Permissions - Auth
+      summary: Register a user
+      description: Returns a jwt token and user info
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+            example:
+              username: foobar
+              email: foo.bar@strapi.io
+              password: Test1234
+        required: true
+      responses:
+        '200':
+          description: Successful registration
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Users-Permissions-UserRegistration'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /auth/{provider}/callback:
+    get:
+      tags:
+      - Users-Permissions - Auth
+      summary: Default Callback from provider auth
+      parameters:
+      - name: provider
+        in: path
+        required: true
+        description: Provider name
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns a jwt token and user info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Users-Permissions-UserRegistration'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /auth/forgot-password:
+    post:
+      tags:
+      - Users-Permissions - Auth
+      summary: Send rest password email
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+            example:
+              email: foo.bar@strapi.io
+      responses:
+        '200':
+          description: Returns ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: string
+                    enum:
+                    - true
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /auth/reset-password:
+    post:
+      tags:
+      - Users-Permissions - Auth
+      summary: Rest user password
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                passwordConfirmation:
+                  type: string
+                code:
+                  type: string
+            example:
+              password: Test1234
+              passwordConfirmation: Test1234
+              code: zertyoaizndoianzodianzdonaizdoinaozdnia
+      responses:
+        '200':
+          description: Returns a jwt token and user info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Users-Permissions-UserRegistration'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /auth/change-password:
+    post:
+      tags:
+      - Users-Permissions - Auth
+      summary: Update user's own password
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - password
+              - currentPassword
+              - passwordConfirmation
+              properties:
+                password:
+                  type: string
+                currentPassword:
+                  type: string
+                passwordConfirmation:
+                  type: string
+      responses:
+        '200':
+          description: Returns a jwt token and user info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Users-Permissions-UserRegistration'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /auth/email-confirmation:
+    get:
+      tags:
+      - Users-Permissions - Auth
+      summary: Confirm user email
+      parameters:
+      - in: query
+        name: confirmation
+        schema:
+          type: string
+        description: confirmation token received by email
+      responses:
+        '301':
+          description: Redirects to the configure email confirmation redirect url
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /auth/send-email-confirmation:
+    post:
+      tags:
+      - Users-Permissions - Auth
+      summary: Send confirmation email
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+      responses:
+        '200':
+          description: Returns email and boolean to confirm email was sent
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  email:
+                    type: string
+                  sent:
+                    type: string
+                    enum:
+                    - true
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
+    Users-Permissions-User:
+      type: object
+      properties:
+        id:
+          type: number
+          example: 1
+        username:
+          type: string
+          example: foo.bar
+        email:
+          type: string
+          example: foo.bar@strapi.io
+        provider:
+          type: string
+          example: local
+        confirmed:
+          type: boolean
+          example: true
+        blocked:
+          type: boolean
+          example: false
+        createdAt:
+          type: string
+          format: date-time
+          example: '2022-06-02T08:32:06.258Z'
+        updatedAt:
+          type: string
+          format: date-time
+          example: '2022-06-02T08:32:06.267Z'
+    Users-Permissions-UserRegistration:
+      type: object
+      properties:
+        jwt:
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        user:
+          $ref: '#/components/schemas/Users-Permissions-User'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+externalDocs:
+  description: Find out more
+  url: https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html
+x-strapi-config:
+  plugins:
+  - upload
+  - users-permissions
