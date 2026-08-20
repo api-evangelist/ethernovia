@@ -277,6 +277,8 @@ apis:
   humanURL: https://portal-admin.ethernovia.com/documentation
   baseURL: https://portal-admin.ethernovia.com/api
   tags:
+  - Upload File
+  tags_raw:
   - Upload - File
   properties:
   - type: OpenAPI
