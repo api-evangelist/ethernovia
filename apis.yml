@@ -10,6 +10,18 @@ description: 'Ethernovia is a San Jose, California semiconductor company buildin
   under NDA and a separate EULA through the Ethernovia Customer Portal. The one machine-readable
   contract reachable without credentials is the Customer Portal''s own backend API, whose
   Swagger UI is served publicly at portal-admin.ethernovia.com/documentation.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.ethernovia.com/wp-content/uploads/2026/02/ethernovia-physical-ai-networking-chips.jpg
 url: https://raw.githubusercontent.com/api-evangelist/ethernovia/refs/heads/main/apis.yml
 x-type: company
