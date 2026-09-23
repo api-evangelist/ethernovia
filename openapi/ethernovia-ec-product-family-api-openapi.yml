@@ -135,6 +135,8 @@ paths:
         schema:
           type: string
       operationId: get/ec-product-families
+      summary: Get/ec product families
+      x-summary-source: derived
     post:
       responses:
         '200':
@@ -183,6 +185,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EcProductFamilyRequest'
+      summary: Post/ec product families
+      x-summary-source: derived
   /ec-product-families/{id}:
     get:
       responses:
@@ -233,6 +237,8 @@ paths:
         schema:
           type: string
       operationId: get/ec-product-families/{id}
+      summary: Get/ec product families/{id}
+      x-summary-source: derived
     put:
       responses:
         '200':
@@ -288,6 +294,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EcProductFamilyRequest'
+      summary: Put/ec product families/{id}
+      x-summary-source: derived
     delete:
       responses:
         '200':
@@ -338,60 +346,10 @@ paths:
         schema:
           type: string
       operationId: delete/ec-product-families/{id}
+      summary: Delete/ec product families/{id}
+      x-summary-source: derived
 components:
   schemas:
-    EcProductFamilyRequest:
-      type: object
-      required:
-      - data
-      properties:
-        data:
-          required:
-          - name
-          type: object
-          properties:
-            name:
-              type: string
-            sort_order:
-              type: integer
-            users:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            ec_groups:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            ec_status:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            locale:
-              type: string
-            localizations:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            strapi_stage:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            strapi_assignee:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
     EcProductFamilyResponse:
       type: object
       properties:
@@ -1471,6 +1429,58 @@ components:
               - type: number
             documentId:
               type: string
+    EcProductFamilyRequest:
+      type: object
+      required:
+      - data
+      properties:
+        data:
+          required:
+          - name
+          type: object
+          properties:
+            name:
+              type: string
+            sort_order:
+              type: integer
+            users:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            ec_groups:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            ec_status:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            locale:
+              type: string
+            localizations:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            strapi_stage:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            strapi_assignee:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
     Error:
       type: object
       required:

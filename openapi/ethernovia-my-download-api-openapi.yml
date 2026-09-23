@@ -135,6 +135,8 @@ paths:
         schema:
           type: string
       operationId: get/my-downloads
+      summary: Get/my downloads
+      x-summary-source: derived
     post:
       responses:
         '200':
@@ -183,6 +185,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/MyDownloadRequest'
+      summary: Post/my downloads
+      x-summary-source: derived
   /my-downloads/{id}:
     get:
       responses:
@@ -233,6 +237,8 @@ paths:
         schema:
           type: string
       operationId: get/my-downloads/{id}
+      summary: Get/my downloads/{id}
+      x-summary-source: derived
     put:
       responses:
         '200':
@@ -288,6 +294,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/MyDownloadRequest'
+      summary: Put/my downloads/{id}
+      x-summary-source: derived
     delete:
       responses:
         '200':
@@ -338,6 +346,8 @@ paths:
         schema:
           type: string
       operationId: delete/my-downloads/{id}
+      summary: Delete/my downloads/{id}
+      x-summary-source: derived
 components:
   schemas:
     MyDownloadResponse:
@@ -398,6 +408,28 @@ components:
               - type: integer
               - type: string
               example: string or id
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
     MyDownloadListResponse:
       type: object
       properties:
@@ -421,28 +453,6 @@ components:
                   maximum: 1
                 total:
                   type: integer
-    Error:
-      type: object
-      required:
-      - error
-      properties:
-        data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        error:
-          type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
     MyDownload:
       type: object
       properties:

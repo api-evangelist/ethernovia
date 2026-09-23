@@ -135,6 +135,8 @@ paths:
         schema:
           type: string
       operationId: get/ec-document-types
+      summary: Get/ec document types
+      x-summary-source: derived
     post:
       responses:
         '200':
@@ -183,6 +185,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EcDocumentTypeRequest'
+      summary: Post/ec document types
+      x-summary-source: derived
   /ec-document-types/{id}:
     get:
       responses:
@@ -233,6 +237,8 @@ paths:
         schema:
           type: string
       operationId: get/ec-document-types/{id}
+      summary: Get/ec document types/{id}
+      x-summary-source: derived
     put:
       responses:
         '200':
@@ -288,6 +294,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EcDocumentTypeRequest'
+      summary: Put/ec document types/{id}
+      x-summary-source: derived
     delete:
       responses:
         '200':
@@ -338,31 +346,17 @@ paths:
         schema:
           type: string
       operationId: delete/ec-document-types/{id}
+      summary: Delete/ec document types/{id}
+      x-summary-source: derived
 components:
   schemas:
-    EcDocumentTypeListResponse:
+    EcDocumentTypeResponse:
       type: object
       properties:
         data:
-          type: array
-          items:
-            $ref: '#/components/schemas/EcDocumentType'
+          $ref: '#/components/schemas/EcDocumentType'
         meta:
           type: object
-          properties:
-            pagination:
-              type: object
-              properties:
-                page:
-                  type: integer
-                pageSize:
-                  type: integer
-                  minimum: 25
-                pageCount:
-                  type: integer
-                  maximum: 1
-                total:
-                  type: integer
     EcDocumentType:
       type: object
       required:
@@ -990,13 +984,6 @@ components:
               - type: number
             documentId:
               type: string
-    EcDocumentTypeResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/EcDocumentType'
-        meta:
-          type: object
     EcDocumentTypeRequest:
       type: object
       required:
@@ -1030,6 +1017,29 @@ components:
               - type: integer
               - type: string
               example: string or id
+    EcDocumentTypeListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EcDocumentType'
+        meta:
+          type: object
+          properties:
+            pagination:
+              type: object
+              properties:
+                page:
+                  type: integer
+                pageSize:
+                  type: integer
+                  minimum: 25
+                pageCount:
+                  type: integer
+                  maximum: 1
+                total:
+                  type: integer
     Error:
       type: object
       required:

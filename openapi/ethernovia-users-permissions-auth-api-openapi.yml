@@ -47,6 +47,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getConnectByProvider
+      x-operation-id-source: derived
   /auth/local:
     post:
       tags:
@@ -80,6 +82,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: postAuthLocal
+      x-operation-id-source: derived
   /auth/local/register:
     post:
       tags:
@@ -116,6 +120,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: postAuthLocalRegister
+      x-operation-id-source: derived
   /auth/{provider}/callback:
     get:
       tags:
@@ -141,6 +147,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getAuthByProviderCallback
+      x-operation-id-source: derived
   /auth/forgot-password:
     post:
       tags:
@@ -175,6 +183,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: postAuthForgotPassword
+      x-operation-id-source: derived
   /auth/reset-password:
     post:
       tags:
@@ -210,6 +220,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: postAuthResetPassword
+      x-operation-id-source: derived
   /auth/change-password:
     post:
       tags:
@@ -245,6 +257,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: postAuthChangePassword
+      x-operation-id-source: derived
   /auth/email-confirmation:
     get:
       tags:
@@ -265,6 +279,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getAuthEmailConfirmation
+      x-operation-id-source: derived
   /auth/send-email-confirmation:
     post:
       tags:
@@ -299,8 +315,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: postAuthSendEmailConfirmation
+      x-operation-id-source: derived
 components:
   schemas:
+    Users-Permissions-UserRegistration:
+      type: object
+      properties:
+        jwt:
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        user:
+          $ref: '#/components/schemas/Users-Permissions-User'
     Error:
       type: object
       required:
@@ -352,14 +378,6 @@ components:
           type: string
           format: date-time
           example: '2022-06-02T08:32:06.267Z'
-    Users-Permissions-UserRegistration:
-      type: object
-      properties:
-        jwt:
-          type: string
-          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
-        user:
-          $ref: '#/components/schemas/Users-Permissions-User'
   securitySchemes:
     bearerAuth:
       type: http

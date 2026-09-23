@@ -69,6 +69,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getUsersPermissionsPermissions
+      x-operation-id-source: derived
   /users-permissions/roles:
     get:
       tags:
@@ -106,6 +108,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getUsersPermissionsRoles
+      x-operation-id-source: derived
     post:
       tags:
       - Users-Permissions - Users & Roles
@@ -130,6 +134,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: postUsersPermissionsRoles
+      x-operation-id-source: derived
   /users-permissions/roles/{id}:
     get:
       tags:
@@ -172,6 +178,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getUsersPermissionsRolesById
+      x-operation-id-source: derived
   /users-permissions/roles/{role}:
     put:
       tags:
@@ -204,6 +212,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: putUsersPermissionsRolesByRole
+      x-operation-id-source: derived
     delete:
       tags:
       - Users-Permissions - Users & Roles
@@ -233,6 +243,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: deleteUsersPermissionsRolesByRole
+      x-operation-id-source: derived
   /users:
     get:
       tags:
@@ -262,6 +274,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getUsers
+      x-operation-id-source: derived
     post:
       tags:
       - Users-Permissions - Users & Roles
@@ -321,6 +335,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: postUsers
+      x-operation-id-source: derived
   /users/{id}:
     get:
       tags:
@@ -355,6 +371,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getUsersById
+      x-operation-id-source: derived
     put:
       tags:
       - Users-Permissions - Users & Roles
@@ -421,6 +439,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: putUsersById
+      x-operation-id-source: derived
     delete:
       tags:
       - Users-Permissions - Users & Roles
@@ -455,6 +475,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: deleteUsersById
+      x-operation-id-source: derived
   /users/me:
     get:
       tags:
@@ -482,6 +504,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getUsersMe
+      x-operation-id-source: derived
   /users/count:
     get:
       tags:
@@ -501,33 +525,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getUsersCount
+      x-operation-id-source: derived
 components:
-  requestBodies:
-    Users-Permissions-RoleRequest:
-      required: true
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              name:
-                type: string
-              description:
-                type: string
-              type:
-                type: string
-              permissions:
-                $ref: '#/components/schemas/Users-Permissions-PermissionsTree'
-          example:
-            name: foo
-            description: role foo
-            permissions:
-              api::content-type.content-type:
-                controllers:
-                  controllerA:
-                    find:
-                      enabled: true
   schemas:
+    Users-Permissions-Role:
+      type: object
+      properties:
+        id:
+          type: number
+        name:
+          type: string
+        description:
+          type: string
+        type:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
     Users-Permissions-User:
       type: object
       properties:
@@ -557,23 +575,25 @@ components:
           type: string
           format: date-time
           example: '2022-06-02T08:32:06.267Z'
-    Users-Permissions-Role:
+    Users-Permissions-PermissionsTree:
       type: object
-      properties:
-        id:
-          type: number
-        name:
-          type: string
-        description:
-          type: string
-        type:
-          type: string
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
+      additionalProperties:
+        type: object
+        description: every api
+        properties:
+          controllers:
+            description: every controller of the api
+            type: object
+            additionalProperties:
+              type: object
+              additionalProperties:
+                description: every action of every controller
+                type: object
+                properties:
+                  enabled:
+                    type: boolean
+                  policy:
+                    type: string
     Error:
       type: object
       required:
@@ -596,25 +616,31 @@ components:
               type: string
             details:
               type: object
-    Users-Permissions-PermissionsTree:
-      type: object
-      additionalProperties:
-        type: object
-        description: every api
-        properties:
-          controllers:
-            description: every controller of the api
+  requestBodies:
+    Users-Permissions-RoleRequest:
+      required: true
+      content:
+        application/json:
+          schema:
             type: object
-            additionalProperties:
-              type: object
-              additionalProperties:
-                description: every action of every controller
-                type: object
-                properties:
-                  enabled:
-                    type: boolean
-                  policy:
-                    type: string
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+              type:
+                type: string
+              permissions:
+                $ref: '#/components/schemas/Users-Permissions-PermissionsTree'
+          example:
+            name: foo
+            description: role foo
+            permissions:
+              api::content-type.content-type:
+                controllers:
+                  controllerA:
+                    find:
+                      enabled: true
   securitySchemes:
     bearerAuth:
       type: http

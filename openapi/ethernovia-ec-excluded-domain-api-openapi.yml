@@ -135,6 +135,8 @@ paths:
         schema:
           type: string
       operationId: get/ec-excluded-domains
+      summary: Get/ec excluded domains
+      x-summary-source: derived
     post:
       responses:
         '200':
@@ -183,6 +185,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EcExcludedDomainRequest'
+      summary: Post/ec excluded domains
+      x-summary-source: derived
   /ec-excluded-domains/{id}:
     get:
       responses:
@@ -233,6 +237,8 @@ paths:
         schema:
           type: string
       operationId: get/ec-excluded-domains/{id}
+      summary: Get/ec excluded domains/{id}
+      x-summary-source: derived
     put:
       responses:
         '200':
@@ -288,6 +294,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EcExcludedDomainRequest'
+      summary: Put/ec excluded domains/{id}
+      x-summary-source: derived
     delete:
       responses:
         '200':
@@ -338,31 +346,41 @@ paths:
         schema:
           type: string
       operationId: delete/ec-excluded-domains/{id}
+      summary: Delete/ec excluded domains/{id}
+      x-summary-source: derived
 components:
   schemas:
-    EcExcludedDomainListResponse:
+    EcExcludedDomainRequest:
       type: object
+      required:
+      - data
       properties:
         data:
-          type: array
-          items:
-            $ref: '#/components/schemas/EcExcludedDomain'
-        meta:
+          required:
+          - domain
           type: object
           properties:
-            pagination:
-              type: object
-              properties:
-                page:
-                  type: integer
-                pageSize:
-                  type: integer
-                  minimum: 25
-                pageCount:
-                  type: integer
-                  maximum: 1
-                total:
-                  type: integer
+            domain:
+              type: string
+            locale:
+              type: string
+            localizations:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            strapi_stage:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            strapi_assignee:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
     EcExcludedDomainResponse:
       type: object
       properties:
@@ -993,37 +1011,6 @@ components:
               - type: number
             documentId:
               type: string
-    EcExcludedDomainRequest:
-      type: object
-      required:
-      - data
-      properties:
-        data:
-          required:
-          - domain
-          type: object
-          properties:
-            domain:
-              type: string
-            locale:
-              type: string
-            localizations:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            strapi_stage:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            strapi_assignee:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
     Error:
       type: object
       required:
@@ -1046,6 +1033,29 @@ components:
               type: string
             details:
               type: object
+    EcExcludedDomainListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EcExcludedDomain'
+        meta:
+          type: object
+          properties:
+            pagination:
+              type: object
+              properties:
+                page:
+                  type: integer
+                pageSize:
+                  type: integer
+                  minimum: 25
+                pageCount:
+                  type: integer
+                  maximum: 1
+                total:
+                  type: integer
   securitySchemes:
     bearerAuth:
       type: http

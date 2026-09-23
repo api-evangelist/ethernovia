@@ -135,6 +135,8 @@ paths:
         schema:
           type: string
       operationId: get/ec-send-alert-emails
+      summary: Get/ec send alert emails
+      x-summary-source: derived
     post:
       responses:
         '200':
@@ -183,6 +185,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EcSendAlertEmailRequest'
+      summary: Post/ec send alert emails
+      x-summary-source: derived
   /ec-send-alert-emails/{id}:
     get:
       responses:
@@ -233,6 +237,8 @@ paths:
         schema:
           type: string
       operationId: get/ec-send-alert-emails/{id}
+      summary: Get/ec send alert emails/{id}
+      x-summary-source: derived
     put:
       responses:
         '200':
@@ -288,6 +294,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EcSendAlertEmailRequest'
+      summary: Put/ec send alert emails/{id}
+      x-summary-source: derived
     delete:
       responses:
         '200':
@@ -338,8 +346,17 @@ paths:
         schema:
           type: string
       operationId: delete/ec-send-alert-emails/{id}
+      summary: Delete/ec send alert emails/{id}
+      x-summary-source: derived
 components:
   schemas:
+    EcSendAlertEmailResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/EcSendAlertEmail'
+        meta:
+          type: object
     EcSendAlertEmailRequest:
       type: object
       required:
@@ -379,6 +396,51 @@ components:
               - type: integer
               - type: string
               example: string or id
+    EcSendAlertEmailListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EcSendAlertEmail'
+        meta:
+          type: object
+          properties:
+            pagination:
+              type: object
+              properties:
+                page:
+                  type: integer
+                pageSize:
+                  type: integer
+                  minimum: 25
+                pageCount:
+                  type: integer
+                  maximum: 1
+                total:
+                  type: integer
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
     EcSendAlertEmail:
       type: object
       required:
@@ -2133,58 +2195,6 @@ components:
               - type: number
             documentId:
               type: string
-    EcSendAlertEmailResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/EcSendAlertEmail'
-        meta:
-          type: object
-    EcSendAlertEmailListResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/EcSendAlertEmail'
-        meta:
-          type: object
-          properties:
-            pagination:
-              type: object
-              properties:
-                page:
-                  type: integer
-                pageSize:
-                  type: integer
-                  minimum: 25
-                pageCount:
-                  type: integer
-                  maximum: 1
-                total:
-                  type: integer
-    Error:
-      type: object
-      required:
-      - error
-      properties:
-        data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        error:
-          type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
   securitySchemes:
     bearerAuth:
       type: http

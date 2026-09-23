@@ -135,6 +135,8 @@ paths:
         schema:
           type: string
       operationId: get/ec-groups
+      summary: Get/ec groups
+      x-summary-source: derived
     post:
       responses:
         '200':
@@ -183,6 +185,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EcGroupRequest'
+      summary: Post/ec groups
+      x-summary-source: derived
   /ec-groups/{id}:
     get:
       responses:
@@ -233,6 +237,8 @@ paths:
         schema:
           type: string
       operationId: get/ec-groups/{id}
+      summary: Get/ec groups/{id}
+      x-summary-source: derived
     put:
       responses:
         '200':
@@ -288,6 +294,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EcGroupRequest'
+      summary: Put/ec groups/{id}
+      x-summary-source: derived
     delete:
       responses:
         '200':
@@ -338,46 +346,10 @@ paths:
         schema:
           type: string
       operationId: delete/ec-groups/{id}
+      summary: Delete/ec groups/{id}
+      x-summary-source: derived
 components:
   schemas:
-    EcGroupRequest:
-      type: object
-      required:
-      - data
-      properties:
-        data:
-          required:
-          - name
-          type: object
-          properties:
-            name:
-              type: string
-            users:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            locale:
-              type: string
-            localizations:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            strapi_stage:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            strapi_assignee:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
     EcGroup:
       type: object
       required:
@@ -1273,6 +1245,13 @@ components:
                   maximum: 1
                 total:
                   type: integer
+    EcGroupResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/EcGroup'
+        meta:
+          type: object
     Error:
       type: object
       required:
@@ -1295,13 +1274,44 @@ components:
               type: string
             details:
               type: object
-    EcGroupResponse:
+    EcGroupRequest:
       type: object
+      required:
+      - data
       properties:
         data:
-          $ref: '#/components/schemas/EcGroup'
-        meta:
+          required:
+          - name
           type: object
+          properties:
+            name:
+              type: string
+            users:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            locale:
+              type: string
+            localizations:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            strapi_stage:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            strapi_assignee:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
   securitySchemes:
     bearerAuth:
       type: http

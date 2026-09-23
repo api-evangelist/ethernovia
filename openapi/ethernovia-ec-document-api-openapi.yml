@@ -135,6 +135,8 @@ paths:
         schema:
           type: string
       operationId: get/ec-documents
+      summary: Get/ec documents
+      x-summary-source: derived
     post:
       responses:
         '200':
@@ -183,6 +185,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EcDocumentRequest'
+      summary: Post/ec documents
+      x-summary-source: derived
   /ec-documents/{id}:
     get:
       responses:
@@ -233,6 +237,8 @@ paths:
         schema:
           type: string
       operationId: get/ec-documents/{id}
+      summary: Get/ec documents/{id}
+      x-summary-source: derived
     put:
       responses:
         '200':
@@ -288,6 +294,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EcDocumentRequest'
+      summary: Put/ec documents/{id}
+      x-summary-source: derived
     delete:
       responses:
         '200':
@@ -338,6 +346,8 @@ paths:
         schema:
           type: string
       operationId: delete/ec-documents/{id}
+      summary: Delete/ec documents/{id}
+      x-summary-source: derived
 components:
   schemas:
     EcDocumentRequest:
@@ -425,6 +435,51 @@ components:
           $ref: '#/components/schemas/EcDocument'
         meta:
           type: object
+    EcDocumentListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EcDocument'
+        meta:
+          type: object
+          properties:
+            pagination:
+              type: object
+              properties:
+                page:
+                  type: integer
+                pageSize:
+                  type: integer
+                  minimum: 25
+                pageCount:
+                  type: integer
+                  maximum: 1
+                total:
+                  type: integer
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
     EcDocument:
       type: object
       required:
@@ -2256,51 +2311,6 @@ components:
               - type: number
             documentId:
               type: string
-    EcDocumentListResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/EcDocument'
-        meta:
-          type: object
-          properties:
-            pagination:
-              type: object
-              properties:
-                page:
-                  type: integer
-                pageSize:
-                  type: integer
-                  minimum: 25
-                pageCount:
-                  type: integer
-                  maximum: 1
-                total:
-                  type: integer
-    Error:
-      type: object
-      required:
-      - error
-      properties:
-        data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        error:
-          type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
   securitySchemes:
     bearerAuth:
       type: http

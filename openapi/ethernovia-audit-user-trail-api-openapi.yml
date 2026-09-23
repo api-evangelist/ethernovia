@@ -135,6 +135,8 @@ paths:
         schema:
           type: string
       operationId: get/audit-user-trails
+      summary: Get/audit user trails
+      x-summary-source: derived
     post:
       responses:
         '200':
@@ -183,6 +185,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/AuditUserTrailRequest'
+      summary: Post/audit user trails
+      x-summary-source: derived
   /audit-user-trails/{id}:
     get:
       responses:
@@ -233,6 +237,8 @@ paths:
         schema:
           type: string
       operationId: get/audit-user-trails/{id}
+      summary: Get/audit user trails/{id}
+      x-summary-source: derived
     put:
       responses:
         '200':
@@ -288,6 +294,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/AuditUserTrailRequest'
+      summary: Put/audit user trails/{id}
+      x-summary-source: derived
     delete:
       responses:
         '200':
@@ -338,15 +346,69 @@ paths:
         schema:
           type: string
       operationId: delete/audit-user-trails/{id}
+      summary: Delete/audit user trails/{id}
+      x-summary-source: derived
 components:
   schemas:
-    AuditUserTrailResponse:
+    AuditUserTrailListResponse:
       type: object
       properties:
         data:
-          $ref: '#/components/schemas/AuditUserTrail'
+          type: array
+          items:
+            $ref: '#/components/schemas/AuditUserTrail'
         meta:
           type: object
+          properties:
+            pagination:
+              type: object
+              properties:
+                page:
+                  type: integer
+                pageSize:
+                  type: integer
+                  minimum: 25
+                pageCount:
+                  type: integer
+                  maximum: 1
+                total:
+                  type: integer
+    AuditUserTrailRequest:
+      type: object
+      required:
+      - data
+      properties:
+        data:
+          type: object
+          properties:
+            user:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            action:
+              type: string
+            description:
+              type: string
+            locale:
+              type: string
+            localizations:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            strapi_stage:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            strapi_assignee:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
     AuditUserTrail:
       type: object
       properties:
@@ -1217,65 +1279,6 @@ components:
               - type: number
             documentId:
               type: string
-    AuditUserTrailRequest:
-      type: object
-      required:
-      - data
-      properties:
-        data:
-          type: object
-          properties:
-            user:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            action:
-              type: string
-            description:
-              type: string
-            locale:
-              type: string
-            localizations:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            strapi_stage:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            strapi_assignee:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-    AuditUserTrailListResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AuditUserTrail'
-        meta:
-          type: object
-          properties:
-            pagination:
-              type: object
-              properties:
-                page:
-                  type: integer
-                pageSize:
-                  type: integer
-                  minimum: 25
-                pageCount:
-                  type: integer
-                  maximum: 1
-                total:
-                  type: integer
     Error:
       type: object
       required:
@@ -1298,6 +1301,13 @@ components:
               type: string
             details:
               type: object
+    AuditUserTrailResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/AuditUserTrail'
+        meta:
+          type: object
   securitySchemes:
     bearerAuth:
       type: http

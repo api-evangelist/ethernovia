@@ -135,6 +135,8 @@ paths:
         schema:
           type: string
       operationId: get/ec-product-categories
+      summary: Get/ec product categories
+      x-summary-source: derived
     post:
       responses:
         '200':
@@ -183,6 +185,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EcProductCategoryRequest'
+      summary: Post/ec product categories
+      x-summary-source: derived
   /ec-product-categories/{id}:
     get:
       responses:
@@ -233,6 +237,8 @@ paths:
         schema:
           type: string
       operationId: get/ec-product-categories/{id}
+      summary: Get/ec product categories/{id}
+      x-summary-source: derived
     put:
       responses:
         '200':
@@ -288,6 +294,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EcProductCategoryRequest'
+      summary: Put/ec product categories/{id}
+      x-summary-source: derived
     delete:
       responses:
         '200':
@@ -338,6 +346,8 @@ paths:
         schema:
           type: string
       operationId: delete/ec-product-categories/{id}
+      summary: Delete/ec product categories/{id}
+      x-summary-source: derived
 components:
   schemas:
     EcProductCategoryRequest:
@@ -1557,6 +1567,13 @@ components:
               - type: number
             documentId:
               type: string
+    EcProductCategoryResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/EcProductCategory'
+        meta:
+          type: object
     EcProductCategoryListResponse:
       type: object
       properties:
@@ -1602,13 +1619,6 @@ components:
               type: string
             details:
               type: object
-    EcProductCategoryResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/EcProductCategory'
-        meta:
-          type: object
   securitySchemes:
     bearerAuth:
       type: http

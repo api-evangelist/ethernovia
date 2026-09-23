@@ -135,6 +135,8 @@ paths:
         schema:
           type: string
       operationId: get/ec-software-packages
+      summary: Get/ec software packages
+      x-summary-source: derived
     post:
       responses:
         '200':
@@ -183,6 +185,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EcSoftwarePackageRequest'
+      summary: Post/ec software packages
+      x-summary-source: derived
   /ec-software-packages/{id}:
     get:
       responses:
@@ -233,6 +237,8 @@ paths:
         schema:
           type: string
       operationId: get/ec-software-packages/{id}
+      summary: Get/ec software packages/{id}
+      x-summary-source: derived
     put:
       responses:
         '200':
@@ -288,6 +294,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EcSoftwarePackageRequest'
+      summary: Put/ec software packages/{id}
+      x-summary-source: derived
     delete:
       responses:
         '200':
@@ -338,15 +346,10 @@ paths:
         schema:
           type: string
       operationId: delete/ec-software-packages/{id}
+      summary: Delete/ec software packages/{id}
+      x-summary-source: derived
 components:
   schemas:
-    EcSoftwarePackageResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/EcSoftwarePackage'
-        meta:
-          type: object
     EcSoftwarePackageRequest:
       type: object
       required:
@@ -424,29 +427,6 @@ components:
               - type: integer
               - type: string
               example: string or id
-    EcSoftwarePackageListResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/EcSoftwarePackage'
-        meta:
-          type: object
-          properties:
-            pagination:
-              type: object
-              properties:
-                page:
-                  type: integer
-                pageSize:
-                  type: integer
-                  minimum: 25
-                pageCount:
-                  type: integer
-                  maximum: 1
-                total:
-                  type: integer
     EcSoftwarePackage:
       type: object
       required:
@@ -2277,6 +2257,36 @@ components:
               - type: number
             documentId:
               type: string
+    EcSoftwarePackageResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/EcSoftwarePackage'
+        meta:
+          type: object
+    EcSoftwarePackageListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EcSoftwarePackage'
+        meta:
+          type: object
+          properties:
+            pagination:
+              type: object
+              properties:
+                page:
+                  type: integer
+                pageSize:
+                  type: integer
+                  minimum: 25
+                pageCount:
+                  type: integer
+                  maximum: 1
+                total:
+                  type: integer
     Error:
       type: object
       required:

@@ -135,6 +135,8 @@ paths:
         schema:
           type: string
       operationId: get/ec-products
+      summary: Get/ec products
+      x-summary-source: derived
     post:
       responses:
         '200':
@@ -183,6 +185,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EcProductRequest'
+      summary: Post/ec products
+      x-summary-source: derived
   /ec-products/{id}:
     get:
       responses:
@@ -233,6 +237,8 @@ paths:
         schema:
           type: string
       operationId: get/ec-products/{id}
+      summary: Get/ec products/{id}
+      x-summary-source: derived
     put:
       responses:
         '200':
@@ -288,6 +294,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EcProductRequest'
+      summary: Put/ec products/{id}
+      x-summary-source: derived
     delete:
       responses:
         '200':
@@ -338,6 +346,8 @@ paths:
         schema:
           type: string
       operationId: delete/ec-products/{id}
+      summary: Delete/ec products/{id}
+      x-summary-source: derived
 components:
   schemas:
     EcProductRequest:
@@ -402,29 +412,6 @@ components:
               - type: integer
               - type: string
               example: string or id
-    EcProductListResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/EcProduct'
-        meta:
-          type: object
-          properties:
-            pagination:
-              type: object
-              properties:
-                page:
-                  type: integer
-                pageSize:
-                  type: integer
-                  minimum: 25
-                pageCount:
-                  type: integer
-                  maximum: 1
-                total:
-                  type: integer
     EcProduct:
       type: object
       required:
@@ -1696,6 +1683,36 @@ components:
               - type: number
             documentId:
               type: string
+    EcProductListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EcProduct'
+        meta:
+          type: object
+          properties:
+            pagination:
+              type: object
+              properties:
+                page:
+                  type: integer
+                pageSize:
+                  type: integer
+                  minimum: 25
+                pageCount:
+                  type: integer
+                  maximum: 1
+                total:
+                  type: integer
+    EcProductResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/EcProduct'
+        meta:
+          type: object
     Error:
       type: object
       required:
@@ -1718,13 +1735,6 @@ components:
               type: string
             details:
               type: object
-    EcProductResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/EcProduct'
-        meta:
-          type: object
   securitySchemes:
     bearerAuth:
       type: http

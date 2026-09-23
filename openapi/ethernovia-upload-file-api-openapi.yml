@@ -18,7 +18,7 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: Upload - File
+- name: Upload File
 paths:
   /upload:
     post:
@@ -32,9 +32,9 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/UploadFile'
-      summary: ''
+      summary: Create upload
       tags:
-      - Upload - File
+      - Upload File
       requestBody:
         description: Upload files
         required: true
@@ -62,6 +62,9 @@ paths:
                   items:
                     type: string
                     format: binary
+      x-summary-source: derived
+      operationId: postUpload
+      x-operation-id-source: derived
   /upload?id={id}:
     post:
       parameters:
@@ -81,9 +84,9 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/UploadFile'
-      summary: ''
+      summary: Create upload?id={id}
       tags:
-      - Upload - File
+      - Upload File
       requestBody:
         description: Upload files
         required: true
@@ -104,10 +107,13 @@ paths:
                 files:
                   type: string
                   format: binary
+      x-summary-source: derived
+      operationId: postUpload?id={id}
+      x-operation-id-source: derived
   /upload/files:
     get:
       tags:
-      - Upload - File
+      - Upload File
       responses:
         '200':
           description: Get a list of files
@@ -117,6 +123,10 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/UploadFile'
+      summary: Get upload files
+      x-summary-source: derived
+      operationId: getUploadFiles
+      x-operation-id-source: derived
   /upload/files/{id}:
     get:
       parameters:
@@ -128,7 +138,7 @@ paths:
         schema:
           type: string
       tags:
-      - Upload - File
+      - Upload File
       responses:
         '200':
           description: Get a specific file
@@ -136,6 +146,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UploadFile'
+      summary: Get upload files by id
+      x-summary-source: derived
+      operationId: getUploadFilesById
+      x-operation-id-source: derived
     delete:
       parameters:
       - name: id
@@ -146,7 +160,7 @@ paths:
         schema:
           type: string
       tags:
-      - Upload - File
+      - Upload File
       responses:
         '200':
           description: Delete a file
@@ -154,6 +168,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UploadFile'
+      summary: Delete upload files by id
+      x-summary-source: derived
+      operationId: deleteUploadFilesById
+      x-operation-id-source: derived
 components:
   schemas:
     UploadFile:
