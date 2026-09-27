@@ -1567,13 +1567,28 @@ components:
               - type: number
             documentId:
               type: string
-    EcProductCategoryResponse:
+    Error:
       type: object
+      required:
+      - error
       properties:
         data:
-          $ref: '#/components/schemas/EcProductCategory'
-        meta:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
           type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
     EcProductCategoryListResponse:
       type: object
       properties:
@@ -1597,28 +1612,13 @@ components:
                   maximum: 1
                 total:
                   type: integer
-    Error:
+    EcProductCategoryResponse:
       type: object
-      required:
-      - error
       properties:
         data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        error:
+          $ref: '#/components/schemas/EcProductCategory'
+        meta:
           type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
   securitySchemes:
     bearerAuth:
       type: http

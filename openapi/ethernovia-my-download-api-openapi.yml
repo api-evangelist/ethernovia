@@ -350,13 +350,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    MyDownloadResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/MyDownload'
-        meta:
-          type: object
     MyDownloadRequest:
       type: object
       required:
@@ -2466,6 +2459,13 @@ components:
               - type: number
             documentId:
               type: string
+    MyDownloadResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/MyDownload'
+        meta:
+          type: object
   securitySchemes:
     bearerAuth:
       type: http

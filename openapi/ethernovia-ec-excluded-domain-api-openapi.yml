@@ -350,37 +350,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    EcExcludedDomainRequest:
-      type: object
-      required:
-      - data
-      properties:
-        data:
-          required:
-          - domain
-          type: object
-          properties:
-            domain:
-              type: string
-            locale:
-              type: string
-            localizations:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            strapi_stage:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            strapi_assignee:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
     EcExcludedDomainResponse:
       type: object
       properties:
@@ -1033,6 +1002,37 @@ components:
               type: string
             details:
               type: object
+    EcExcludedDomainRequest:
+      type: object
+      required:
+      - data
+      properties:
+        data:
+          required:
+          - domain
+          type: object
+          properties:
+            domain:
+              type: string
+            locale:
+              type: string
+            localizations:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            strapi_stage:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            strapi_assignee:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
     EcExcludedDomainListResponse:
       type: object
       properties:

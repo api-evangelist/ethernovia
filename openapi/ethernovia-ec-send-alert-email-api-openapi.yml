@@ -350,13 +350,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    EcSendAlertEmailResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/EcSendAlertEmail'
-        meta:
-          type: object
     EcSendAlertEmailRequest:
       type: object
       required:
@@ -396,6 +389,35 @@ components:
               - type: integer
               - type: string
               example: string or id
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
+    EcSendAlertEmailResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/EcSendAlertEmail'
+        meta:
+          type: object
     EcSendAlertEmailListResponse:
       type: object
       properties:
@@ -419,28 +441,6 @@ components:
                   maximum: 1
                 total:
                   type: integer
-    Error:
-      type: object
-      required:
-      - error
-      properties:
-        data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        error:
-          type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
     EcSendAlertEmail:
       type: object
       required:

@@ -529,23 +529,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Users-Permissions-Role:
-      type: object
-      properties:
-        id:
-          type: number
-        name:
-          type: string
-        description:
-          type: string
-        type:
-          type: string
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
     Users-Permissions-User:
       type: object
       properties:
@@ -616,6 +599,23 @@ components:
               type: string
             details:
               type: object
+    Users-Permissions-Role:
+      type: object
+      properties:
+        id:
+          type: number
+        name:
+          type: string
+        description:
+          type: string
+        type:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
   requestBodies:
     Users-Permissions-RoleRequest:
       required: true

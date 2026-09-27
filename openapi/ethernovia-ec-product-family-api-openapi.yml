@@ -350,6 +350,80 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    EcProductFamilyRequest:
+      type: object
+      required:
+      - data
+      properties:
+        data:
+          required:
+          - name
+          type: object
+          properties:
+            name:
+              type: string
+            sort_order:
+              type: integer
+            users:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            ec_groups:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            ec_status:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            locale:
+              type: string
+            localizations:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            strapi_stage:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            strapi_assignee:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
     EcProductFamilyResponse:
       type: object
       properties:
@@ -357,29 +431,6 @@ components:
           $ref: '#/components/schemas/EcProductFamily'
         meta:
           type: object
-    EcProductFamilyListResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/EcProductFamily'
-        meta:
-          type: object
-          properties:
-            pagination:
-              type: object
-              properties:
-                page:
-                  type: integer
-                pageSize:
-                  type: integer
-                  minimum: 25
-                pageCount:
-                  type: integer
-                  maximum: 1
-                total:
-                  type: integer
     EcProductFamily:
       type: object
       required:
@@ -1429,80 +1480,29 @@ components:
               - type: number
             documentId:
               type: string
-    EcProductFamilyRequest:
+    EcProductFamilyListResponse:
       type: object
-      required:
-      - data
       properties:
         data:
-          required:
-          - name
+          type: array
+          items:
+            $ref: '#/components/schemas/EcProductFamily'
+        meta:
           type: object
           properties:
-            name:
-              type: string
-            sort_order:
-              type: integer
-            users:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            ec_groups:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            ec_status:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            locale:
-              type: string
-            localizations:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            strapi_stage:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            strapi_assignee:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-    Error:
-      type: object
-      required:
-      - error
-      properties:
-        data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
+            pagination:
               type: object
-        error:
-          type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
+              properties:
+                page:
+                  type: integer
+                pageSize:
+                  type: integer
+                  minimum: 25
+                pageCount:
+                  type: integer
+                  maximum: 1
+                total:
+                  type: integer
   securitySchemes:
     bearerAuth:
       type: http

@@ -350,6 +350,35 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
+    EcStatusResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/EcStatus'
+        meta:
+          type: object
     EcStatusRequest:
       type: object
       required:
@@ -383,58 +412,6 @@ components:
               - type: integer
               - type: string
               example: string or id
-    EcStatusListResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/EcStatus'
-        meta:
-          type: object
-          properties:
-            pagination:
-              type: object
-              properties:
-                page:
-                  type: integer
-                pageSize:
-                  type: integer
-                  minimum: 25
-                pageCount:
-                  type: integer
-                  maximum: 1
-                total:
-                  type: integer
-    EcStatusResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/EcStatus'
-        meta:
-          type: object
-    Error:
-      type: object
-      required:
-      - error
-      properties:
-        data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        error:
-          type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
     EcStatus:
       type: object
       required:
@@ -1062,6 +1039,29 @@ components:
               - type: number
             documentId:
               type: string
+    EcStatusListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EcStatus'
+        meta:
+          type: object
+          properties:
+            pagination:
+              type: object
+              properties:
+                page:
+                  type: integer
+                pageSize:
+                  type: integer
+                  minimum: 25
+                pageCount:
+                  type: integer
+                  maximum: 1
+                total:
+                  type: integer
   securitySchemes:
     bearerAuth:
       type: http

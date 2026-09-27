@@ -319,14 +319,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Users-Permissions-UserRegistration:
-      type: object
-      properties:
-        jwt:
-          type: string
-          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
-        user:
-          $ref: '#/components/schemas/Users-Permissions-User'
     Error:
       type: object
       required:
@@ -349,6 +341,14 @@ components:
               type: string
             details:
               type: object
+    Users-Permissions-UserRegistration:
+      type: object
+      properties:
+        jwt:
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        user:
+          $ref: '#/components/schemas/Users-Permissions-User'
     Users-Permissions-User:
       type: object
       properties:
