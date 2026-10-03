@@ -372,6 +372,107 @@ components:
               type: string
             details:
               type: object
+    EcDocumentListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EcDocument'
+        meta:
+          type: object
+          properties:
+            pagination:
+              type: object
+              properties:
+                page:
+                  type: integer
+                pageSize:
+                  type: integer
+                  minimum: 25
+                pageCount:
+                  type: integer
+                  maximum: 1
+                total:
+                  type: integer
+    EcDocumentRequest:
+      type: object
+      required:
+      - data
+      properties:
+        data:
+          required:
+          - name
+          - file
+          - date
+          - revision
+          - ec_document_type
+          type: object
+          properties:
+            name:
+              type: string
+            file:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            sort_order:
+              type: integer
+            date:
+              type: string
+              format: date
+            revision:
+              type: string
+            ec_document_type:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            ec_products:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            users:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            ec_status:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            ec_groups:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            locale:
+              type: string
+            localizations:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            strapi_stage:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            strapi_assignee:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
     EcDocument:
       type: object
       required:
@@ -2203,29 +2304,6 @@ components:
               - type: number
             documentId:
               type: string
-    EcDocumentListResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/EcDocument'
-        meta:
-          type: object
-          properties:
-            pagination:
-              type: object
-              properties:
-                page:
-                  type: integer
-                pageSize:
-                  type: integer
-                  minimum: 25
-                pageCount:
-                  type: integer
-                  maximum: 1
-                total:
-                  type: integer
     EcDocumentResponse:
       type: object
       properties:
@@ -2233,84 +2311,6 @@ components:
           $ref: '#/components/schemas/EcDocument'
         meta:
           type: object
-    EcDocumentRequest:
-      type: object
-      required:
-      - data
-      properties:
-        data:
-          required:
-          - name
-          - file
-          - date
-          - revision
-          - ec_document_type
-          type: object
-          properties:
-            name:
-              type: string
-            file:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            sort_order:
-              type: integer
-            date:
-              type: string
-              format: date
-            revision:
-              type: string
-            ec_document_type:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            ec_products:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            users:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            ec_status:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            ec_groups:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            locale:
-              type: string
-            localizations:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            strapi_stage:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            strapi_assignee:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
   securitySchemes:
     bearerAuth:
       type: http

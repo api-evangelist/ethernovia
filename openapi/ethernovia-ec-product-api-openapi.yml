@@ -350,6 +350,97 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    EcProductRequest:
+      type: object
+      required:
+      - data
+      properties:
+        data:
+          required:
+          - name
+          - slug
+          type: object
+          properties:
+            name:
+              type: string
+            sort_order:
+              type: integer
+            slug:
+              type: string
+            users:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            ec_groups:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            ec_status:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            ec_product_categories:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            locale:
+              type: string
+            localizations:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            strapi_stage:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            strapi_assignee:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
+    EcProductResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/EcProduct'
+        meta:
+          type: object
     EcProductListResponse:
       type: object
       properties:
@@ -373,28 +464,6 @@ components:
                   maximum: 1
                 total:
                   type: integer
-    Error:
-      type: object
-      required:
-      - error
-      properties:
-        data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        error:
-          type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
     EcProduct:
       type: object
       required:
@@ -1666,75 +1735,6 @@ components:
               - type: number
             documentId:
               type: string
-    EcProductResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/EcProduct'
-        meta:
-          type: object
-    EcProductRequest:
-      type: object
-      required:
-      - data
-      properties:
-        data:
-          required:
-          - name
-          - slug
-          type: object
-          properties:
-            name:
-              type: string
-            sort_order:
-              type: integer
-            slug:
-              type: string
-            users:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            ec_groups:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            ec_status:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            ec_product_categories:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            locale:
-              type: string
-            localizations:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            strapi_stage:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            strapi_assignee:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
   securitySchemes:
     bearerAuth:
       type: http

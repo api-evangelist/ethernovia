@@ -977,6 +977,58 @@ components:
               - type: number
             documentId:
               type: string
+    EcDocumentTypeListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EcDocumentType'
+        meta:
+          type: object
+          properties:
+            pagination:
+              type: object
+              properties:
+                page:
+                  type: integer
+                pageSize:
+                  type: integer
+                  minimum: 25
+                pageCount:
+                  type: integer
+                  maximum: 1
+                total:
+                  type: integer
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
+    EcDocumentTypeResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/EcDocumentType'
+        meta:
+          type: object
     EcDocumentTypeRequest:
       type: object
       required:
@@ -1010,58 +1062,6 @@ components:
               - type: integer
               - type: string
               example: string or id
-    Error:
-      type: object
-      required:
-      - error
-      properties:
-        data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        error:
-          type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
-    EcDocumentTypeListResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/EcDocumentType'
-        meta:
-          type: object
-          properties:
-            pagination:
-              type: object
-              properties:
-                page:
-                  type: integer
-                pageSize:
-                  type: integer
-                  minimum: 25
-                pageCount:
-                  type: integer
-                  maximum: 1
-                total:
-                  type: integer
-    EcDocumentTypeResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/EcDocumentType'
-        meta:
-          type: object
   securitySchemes:
     bearerAuth:
       type: http

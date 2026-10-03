@@ -350,6 +350,29 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    EcSoftwarePackageListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EcSoftwarePackage'
+        meta:
+          type: object
+          properties:
+            pagination:
+              type: object
+              properties:
+                page:
+                  type: integer
+                pageSize:
+                  type: integer
+                  minimum: 25
+                pageCount:
+                  type: integer
+                  maximum: 1
+                total:
+                  type: integer
     EcSoftwarePackage:
       type: object
       required:
@@ -2202,29 +2225,6 @@ components:
               type: string
             details:
               type: object
-    EcSoftwarePackageListResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/EcSoftwarePackage'
-        meta:
-          type: object
-          properties:
-            pagination:
-              type: object
-              properties:
-                page:
-                  type: integer
-                pageSize:
-                  type: integer
-                  minimum: 25
-                pageCount:
-                  type: integer
-                  maximum: 1
-                total:
-                  type: integer
     EcSoftwarePackageRequest:
       type: object
       required:

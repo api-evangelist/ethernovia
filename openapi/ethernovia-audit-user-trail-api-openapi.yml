@@ -350,35 +350,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    AuditUserTrailResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/AuditUserTrail'
-        meta:
-          type: object
-    Error:
-      type: object
-      required:
-      - error
-      properties:
-        data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        error:
-          type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
     AuditUserTrailRequest:
       type: object
       required:
@@ -438,6 +409,28 @@ components:
                   maximum: 1
                 total:
                   type: integer
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
     AuditUserTrail:
       type: object
       properties:
@@ -1308,6 +1301,13 @@ components:
               - type: number
             documentId:
               type: string
+    AuditUserTrailResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/AuditUserTrail'
+        meta:
+          type: object
   securitySchemes:
     bearerAuth:
       type: http

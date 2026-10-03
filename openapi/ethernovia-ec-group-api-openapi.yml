@@ -350,13 +350,51 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    EcGroupResponse:
+    EcGroupListResponse:
       type: object
       properties:
         data:
-          $ref: '#/components/schemas/EcGroup'
+          type: array
+          items:
+            $ref: '#/components/schemas/EcGroup'
         meta:
           type: object
+          properties:
+            pagination:
+              type: object
+              properties:
+                page:
+                  type: integer
+                pageSize:
+                  type: integer
+                  minimum: 25
+                pageCount:
+                  type: integer
+                  maximum: 1
+                total:
+                  type: integer
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
     EcGroupRequest:
       type: object
       required:
@@ -395,28 +433,13 @@ components:
               - type: integer
               - type: string
               example: string or id
-    Error:
+    EcGroupResponse:
       type: object
-      required:
-      - error
       properties:
         data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        error:
+          $ref: '#/components/schemas/EcGroup'
+        meta:
           type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
     EcGroup:
       type: object
       required:
@@ -1289,29 +1312,6 @@ components:
               - type: number
             documentId:
               type: string
-    EcGroupListResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/EcGroup'
-        meta:
-          type: object
-          properties:
-            pagination:
-              type: object
-              properties:
-                page:
-                  type: integer
-                pageSize:
-                  type: integer
-                  minimum: 25
-                pageCount:
-                  type: integer
-                  maximum: 1
-                total:
-                  type: integer
   securitySchemes:
     bearerAuth:
       type: http

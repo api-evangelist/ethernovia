@@ -350,74 +350,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    EcSendAlertEmailRequest:
-      type: object
-      required:
-      - data
-      properties:
-        data:
-          required:
-          - isEmailSent
-          type: object
-          properties:
-            isEmailSent:
-              type: boolean
-            ec_document:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            completedAt:
-              type: string
-              format: date-time
-            locale:
-              type: string
-            localizations:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            strapi_stage:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            strapi_assignee:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-    Error:
-      type: object
-      required:
-      - error
-      properties:
-        data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        error:
-          type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
-    EcSendAlertEmailResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/EcSendAlertEmail'
-        meta:
-          type: object
     EcSendAlertEmailListResponse:
       type: object
       properties:
@@ -2195,6 +2127,74 @@ components:
               - type: number
             documentId:
               type: string
+    EcSendAlertEmailRequest:
+      type: object
+      required:
+      - data
+      properties:
+        data:
+          required:
+          - isEmailSent
+          type: object
+          properties:
+            isEmailSent:
+              type: boolean
+            ec_document:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            completedAt:
+              type: string
+              format: date-time
+            locale:
+              type: string
+            localizations:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            strapi_stage:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            strapi_assignee:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+    EcSendAlertEmailResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/EcSendAlertEmail'
+        meta:
+          type: object
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
   securitySchemes:
     bearerAuth:
       type: http
