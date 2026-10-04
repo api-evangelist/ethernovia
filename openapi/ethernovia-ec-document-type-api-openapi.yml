@@ -350,6 +350,46 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    EcDocumentTypeResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/EcDocumentType'
+        meta:
+          type: object
+    EcDocumentTypeRequest:
+      type: object
+      required:
+      - data
+      properties:
+        data:
+          required:
+          - name
+          type: object
+          properties:
+            name:
+              type: string
+            sort_order:
+              type: integer
+            locale:
+              type: string
+            localizations:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            strapi_stage:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            strapi_assignee:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
     EcDocumentType:
       type: object
       required:
@@ -977,6 +1017,28 @@ components:
               - type: number
             documentId:
               type: string
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
     EcDocumentTypeListResponse:
       type: object
       properties:
@@ -1000,68 +1062,6 @@ components:
                   maximum: 1
                 total:
                   type: integer
-    Error:
-      type: object
-      required:
-      - error
-      properties:
-        data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        error:
-          type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
-    EcDocumentTypeResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/EcDocumentType'
-        meta:
-          type: object
-    EcDocumentTypeRequest:
-      type: object
-      required:
-      - data
-      properties:
-        data:
-          required:
-          - name
-          type: object
-          properties:
-            name:
-              type: string
-            sort_order:
-              type: integer
-            locale:
-              type: string
-            localizations:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            strapi_stage:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            strapi_assignee:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
   securitySchemes:
     bearerAuth:
       type: http

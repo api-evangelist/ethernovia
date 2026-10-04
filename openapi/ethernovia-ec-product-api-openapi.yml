@@ -350,6 +350,58 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    EcProductListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EcProduct'
+        meta:
+          type: object
+          properties:
+            pagination:
+              type: object
+              properties:
+                page:
+                  type: integer
+                pageSize:
+                  type: integer
+                  minimum: 25
+                pageCount:
+                  type: integer
+                  maximum: 1
+                total:
+                  type: integer
+    EcProductResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/EcProduct'
+        meta:
+          type: object
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
     EcProductRequest:
       type: object
       required:
@@ -412,58 +464,6 @@ components:
               - type: integer
               - type: string
               example: string or id
-    Error:
-      type: object
-      required:
-      - error
-      properties:
-        data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        error:
-          type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
-    EcProductResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/EcProduct'
-        meta:
-          type: object
-    EcProductListResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/EcProduct'
-        meta:
-          type: object
-          properties:
-            pagination:
-              type: object
-              properties:
-                page:
-                  type: integer
-                pageSize:
-                  type: integer
-                  minimum: 25
-                pageCount:
-                  type: integer
-                  maximum: 1
-                total:
-                  type: integer
     EcProduct:
       type: object
       required:

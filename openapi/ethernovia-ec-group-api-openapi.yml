@@ -350,96 +350,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    EcGroupListResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/EcGroup'
-        meta:
-          type: object
-          properties:
-            pagination:
-              type: object
-              properties:
-                page:
-                  type: integer
-                pageSize:
-                  type: integer
-                  minimum: 25
-                pageCount:
-                  type: integer
-                  maximum: 1
-                total:
-                  type: integer
-    Error:
-      type: object
-      required:
-      - error
-      properties:
-        data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        error:
-          type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
-    EcGroupRequest:
-      type: object
-      required:
-      - data
-      properties:
-        data:
-          required:
-          - name
-          type: object
-          properties:
-            name:
-              type: string
-            users:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            locale:
-              type: string
-            localizations:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            strapi_stage:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            strapi_assignee:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-    EcGroupResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/EcGroup'
-        meta:
-          type: object
     EcGroup:
       type: object
       required:
@@ -1312,6 +1222,96 @@ components:
               - type: number
             documentId:
               type: string
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
+    EcGroupResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/EcGroup'
+        meta:
+          type: object
+    EcGroupRequest:
+      type: object
+      required:
+      - data
+      properties:
+        data:
+          required:
+          - name
+          type: object
+          properties:
+            name:
+              type: string
+            users:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            locale:
+              type: string
+            localizations:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            strapi_stage:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            strapi_assignee:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+    EcGroupListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EcGroup'
+        meta:
+          type: object
+          properties:
+            pagination:
+              type: object
+              properties:
+                page:
+                  type: integer
+                pageSize:
+                  type: integer
+                  minimum: 25
+                pageCount:
+                  type: integer
+                  maximum: 1
+                total:
+                  type: integer
   securitySchemes:
     bearerAuth:
       type: http

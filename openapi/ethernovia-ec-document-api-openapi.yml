@@ -350,28 +350,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    Error:
-      type: object
-      required:
-      - error
-      properties:
-        data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        error:
-          type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
     EcDocumentListResponse:
       type: object
       properties:
@@ -395,6 +373,28 @@ components:
                   maximum: 1
                 total:
                   type: integer
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
     EcDocumentRequest:
       type: object
       required:
@@ -473,6 +473,13 @@ components:
               - type: integer
               - type: string
               example: string or id
+    EcDocumentResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/EcDocument'
+        meta:
+          type: object
     EcDocument:
       type: object
       required:
@@ -2304,13 +2311,6 @@ components:
               - type: number
             documentId:
               type: string
-    EcDocumentResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/EcDocument'
-        meta:
-          type: object
   securitySchemes:
     bearerAuth:
       type: http

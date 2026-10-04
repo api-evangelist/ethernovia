@@ -383,6 +383,28 @@ components:
               - type: integer
               - type: string
               example: string or id
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
     EcStatusListResponse:
       type: object
       properties:
@@ -406,35 +428,6 @@ components:
                   maximum: 1
                 total:
                   type: integer
-    Error:
-      type: object
-      required:
-      - error
-      properties:
-        data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        error:
-          type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
-    EcStatusResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/EcStatus'
-        meta:
-          type: object
     EcStatus:
       type: object
       required:
@@ -1062,6 +1055,13 @@ components:
               - type: number
             documentId:
               type: string
+    EcStatusResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/EcStatus'
+        meta:
+          type: object
   securitySchemes:
     bearerAuth:
       type: http

@@ -350,6 +350,29 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    AuditUserTrailListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AuditUserTrail'
+        meta:
+          type: object
+          properties:
+            pagination:
+              type: object
+              properties:
+                page:
+                  type: integer
+                pageSize:
+                  type: integer
+                  minimum: 25
+                pageCount:
+                  type: integer
+                  maximum: 1
+                total:
+                  type: integer
     AuditUserTrailRequest:
       type: object
       required:
@@ -386,29 +409,6 @@ components:
               - type: integer
               - type: string
               example: string or id
-    AuditUserTrailListResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AuditUserTrail'
-        meta:
-          type: object
-          properties:
-            pagination:
-              type: object
-              properties:
-                page:
-                  type: integer
-                pageSize:
-                  type: integer
-                  minimum: 25
-                pageCount:
-                  type: integer
-                  maximum: 1
-                total:
-                  type: integer
     Error:
       type: object
       required:
@@ -431,6 +431,13 @@ components:
               type: string
             details:
               type: object
+    AuditUserTrailResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/AuditUserTrail'
+        meta:
+          type: object
     AuditUserTrail:
       type: object
       properties:
@@ -1301,13 +1308,6 @@ components:
               - type: number
             documentId:
               type: string
-    AuditUserTrailResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/AuditUserTrail'
-        meta:
-          type: object
   securitySchemes:
     bearerAuth:
       type: http

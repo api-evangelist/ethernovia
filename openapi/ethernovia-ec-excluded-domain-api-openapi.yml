@@ -350,51 +350,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    EcExcludedDomainListResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/EcExcludedDomain'
-        meta:
-          type: object
-          properties:
-            pagination:
-              type: object
-              properties:
-                page:
-                  type: integer
-                pageSize:
-                  type: integer
-                  minimum: 25
-                pageCount:
-                  type: integer
-                  maximum: 1
-                total:
-                  type: integer
-    Error:
-      type: object
-      required:
-      - error
-      properties:
-        data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        error:
-          type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
     EcExcludedDomainRequest:
       type: object
       required:
@@ -1056,6 +1011,51 @@ components:
               - type: number
             documentId:
               type: string
+    EcExcludedDomainListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EcExcludedDomain'
+        meta:
+          type: object
+          properties:
+            pagination:
+              type: object
+              properties:
+                page:
+                  type: integer
+                pageSize:
+                  type: integer
+                  minimum: 25
+                pageCount:
+                  type: integer
+                  maximum: 1
+                total:
+                  type: integer
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
   securitySchemes:
     bearerAuth:
       type: http

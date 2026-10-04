@@ -528,31 +528,6 @@ paths:
       operationId: getUsersCount
       x-operation-id-source: derived
 components:
-  requestBodies:
-    Users-Permissions-RoleRequest:
-      required: true
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              name:
-                type: string
-              description:
-                type: string
-              type:
-                type: string
-              permissions:
-                $ref: '#/components/schemas/Users-Permissions-PermissionsTree'
-          example:
-            name: foo
-            description: role foo
-            permissions:
-              api::content-type.content-type:
-                controllers:
-                  controllerA:
-                    find:
-                      enabled: true
   schemas:
     Users-Permissions-Role:
       type: object
@@ -571,6 +546,25 @@ components:
         updatedAt:
           type: string
           format: date-time
+    Users-Permissions-PermissionsTree:
+      type: object
+      additionalProperties:
+        type: object
+        description: every api
+        properties:
+          controllers:
+            description: every controller of the api
+            type: object
+            additionalProperties:
+              type: object
+              additionalProperties:
+                description: every action of every controller
+                type: object
+                properties:
+                  enabled:
+                    type: boolean
+                  policy:
+                    type: string
     Error:
       type: object
       required:
@@ -593,25 +587,6 @@ components:
               type: string
             details:
               type: object
-    Users-Permissions-PermissionsTree:
-      type: object
-      additionalProperties:
-        type: object
-        description: every api
-        properties:
-          controllers:
-            description: every controller of the api
-            type: object
-            additionalProperties:
-              type: object
-              additionalProperties:
-                description: every action of every controller
-                type: object
-                properties:
-                  enabled:
-                    type: boolean
-                  policy:
-                    type: string
     Users-Permissions-User:
       type: object
       properties:
@@ -641,6 +616,31 @@ components:
           type: string
           format: date-time
           example: '2022-06-02T08:32:06.267Z'
+  requestBodies:
+    Users-Permissions-RoleRequest:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+              type:
+                type: string
+              permissions:
+                $ref: '#/components/schemas/Users-Permissions-PermissionsTree'
+          example:
+            name: foo
+            description: role foo
+            permissions:
+              api::content-type.content-type:
+                controllers:
+                  controllerA:
+                    find:
+                      enabled: true
   securitySchemes:
     bearerAuth:
       type: http

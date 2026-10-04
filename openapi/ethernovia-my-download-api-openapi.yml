@@ -350,6 +350,86 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    MyDownloadRequest:
+      type: object
+      required:
+      - data
+      properties:
+        data:
+          type: object
+          properties:
+            users:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            ec_document:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            description:
+              type: string
+            type:
+              type: string
+              enum:
+              - software-package
+              - document
+            ec_software_package:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            revision:
+              type: string
+            locale:
+              type: string
+            localizations:
+              type: array
+              items:
+                oneOf:
+                - type: integer
+                - type: string
+                example: string or id
+            strapi_stage:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+            strapi_assignee:
+              oneOf:
+              - type: integer
+              - type: string
+              example: string or id
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
+    MyDownloadResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/MyDownload'
+        meta:
+          type: object
     MyDownload:
       type: object
       properties:
@@ -2363,35 +2443,6 @@ components:
               - type: number
             documentId:
               type: string
-    MyDownloadResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/MyDownload'
-        meta:
-          type: object
-    Error:
-      type: object
-      required:
-      - error
-      properties:
-        data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        error:
-          type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
     MyDownloadListResponse:
       type: object
       properties:
@@ -2415,57 +2466,6 @@ components:
                   maximum: 1
                 total:
                   type: integer
-    MyDownloadRequest:
-      type: object
-      required:
-      - data
-      properties:
-        data:
-          type: object
-          properties:
-            users:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            ec_document:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            description:
-              type: string
-            type:
-              type: string
-              enum:
-              - software-package
-              - document
-            ec_software_package:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            revision:
-              type: string
-            locale:
-              type: string
-            localizations:
-              type: array
-              items:
-                oneOf:
-                - type: integer
-                - type: string
-                example: string or id
-            strapi_stage:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
-            strapi_assignee:
-              oneOf:
-              - type: integer
-              - type: string
-              example: string or id
   securitySchemes:
     bearerAuth:
       type: http

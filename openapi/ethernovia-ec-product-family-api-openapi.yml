@@ -1399,28 +1399,6 @@ components:
               - type: number
             documentId:
               type: string
-    Error:
-      type: object
-      required:
-      - error
-      properties:
-        data:
-          oneOf:
-          - type: object
-          - type: array
-            items:
-              type: object
-        error:
-          type: object
-          properties:
-            status:
-              type: integer
-            name:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
     EcProductFamilyRequest:
       type: object
       required:
@@ -1473,13 +1451,6 @@ components:
               - type: integer
               - type: string
               example: string or id
-    EcProductFamilyResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/EcProductFamily'
-        meta:
-          type: object
     EcProductFamilyListResponse:
       type: object
       properties:
@@ -1503,6 +1474,35 @@ components:
                   maximum: 1
                 total:
                   type: integer
+    Error:
+      type: object
+      required:
+      - error
+      properties:
+        data:
+          oneOf:
+          - type: object
+          - type: array
+            items:
+              type: object
+        error:
+          type: object
+          properties:
+            status:
+              type: integer
+            name:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
+    EcProductFamilyResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/EcProductFamily'
+        meta:
+          type: object
   securitySchemes:
     bearerAuth:
       type: http
