@@ -1,21 +1,19 @@
-# Kin Score artifact — ethernovia — 2026-08-25T154045
+# Kin Score artifact — ethernovia — 2026-10-03T000835
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: ethernovia
-  schema_version: 0.14.0
-  scored_at: '2026-08-25'
-  run_ts: 2026-08-25T154045
-  composite: 37.2
+  schema_version: 0.23.0
+  scored_at: '2026-10-03'
+  run_ts: 2026-10-03T000835
+  composite: 36.3
   band: thin
   facets:
-    discoverability: 85.2
-    contract_quality: 43.9
-    governance: 30.3
+    discoverability: 67.0
+    contract_quality: 43.6
+    contract_governance: 18.2
     operational_transparency: 0.0
-    developer_ergonomics: 28.0
-    commercial_clarity: 42.1
-    contract_governance: 30.3
+    developer_ergonomics: 35.1
     access_clarity: 42.1
   agent_readiness:
     score: 37.2
@@ -40,6 +38,12 @@ kin_score:
       protected_resource_metadata: false
       dynamic_client_registration: true
       agentic_commerce: false
+  regulatory:
+    applies: true
+    regime: Horizontal (data, software, accessibility, platform)
+    regime_id: horizontal
+    score: 27.3
+    matched_via: fallback
   provenance:
     skills: derived
     conformance: first-party
